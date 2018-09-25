@@ -2,6 +2,14 @@ from django.db import models
 
 # Create your models here.
 class Users(models.Model):
-    uid = models.AutoField(primary_key=True)
+    fname = models.CharField(max_length = 40)
+    lname = models.CharField(max_length = 40)
     username = models.CharField(max_length = 250)
-    pass
+    password = models.CharField(max_length = 40)
+    email = models.CharField(max_length = 50)
+    
+
+
+def __str__(self):
+
+    return self.title
