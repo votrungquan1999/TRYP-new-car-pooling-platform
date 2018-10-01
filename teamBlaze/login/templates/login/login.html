@@ -6,6 +6,12 @@
   </head>
   <body>
     <h1>This is the login page</h1>
+    <form class="site-form" action="/login/" method="post">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" name="" value="Sign Up">
+
+    </form>
 
   </body>
 </html>
