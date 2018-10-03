@@ -20,7 +20,7 @@ def login_view(request):
             #log user in
             user = form.get_user()
             login(request,user)
-
+            request.session['user_id'] = user.id
             return redirect('roleChoice:roleChoice')
 
 
