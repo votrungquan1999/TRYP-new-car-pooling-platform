@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 
 # Create your views here.
-def promt_user(request):
+def rolechoice_view(request):
     user_id = request.session['user_id']
     if user_id is not None:
         user = User.objects.get(pk=user_id)

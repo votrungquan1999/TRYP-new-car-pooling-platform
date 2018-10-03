@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'roleChoice'
 urlpatterns = [
-    path('', views.promt_user, name = "roleChoice")
+    path('', views.rolechoice_view, name = "roleChoice")
 ]
