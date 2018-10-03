@@ -7,9 +7,5 @@ class Users(models.Model):
     username = models.CharField(max_length = 250)
     password = models.CharField(max_length = 40)
     email = models.CharField(max_length = 50)
-    
-
-
-def __str__(self):
-
-    return self.title
+    def __str__(self):
+        return self.fname + self.lname
