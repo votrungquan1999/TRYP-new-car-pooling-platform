@@ -1,0 +1,184 @@
+/***************CONTENT SECTION***************/
+
+/*Custom font for logo*/
+@font-face {
+    font-family: 'OogieBoogie';
+    src: url('OogieBoogie.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*Logo template starts here*/
+.logo h1 {
+    text-align:center;
+    position: relative;
+    margin: 0 auto;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    font-size: 8rem;
+    color: white;
+}
+
+.logo p {
+    text-align:center;
+    margin: 0 auto;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    font-size: 3rem;
+    padding-bottom: 20px;
+    color: white;
+}
+/*Logo template ends here*/
+
+
+.middle {
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    font-family: Courier, monospace;
+    font-size: 3rem;
+    color: saddlebrown;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
+}
+
+.button2 {
+    font-weight: 100;
+    font-family: Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+
+/*About template starts here*/
+.about h1 {
+    text-align: center;
+    width: 100%;
+    font-family: Courier, monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+    
+.about p {
+    text-align: center;
+    font-family: Courier, monospace;
+    font-weight: 1000;
+    font-size: 2rem;
+    color: #ffffff;
+}
+/*About template ends here*/
+
+
+/***************BOXES AND CONTAINERS SECTION***************/
+
+/*Template starts here*/
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #4a4a4a;
+}
+
+    
+.middle {
+    background-image: url("d598225506e8003a5cdbc0c7e910750e.jpg");
+    background-size: 100% 850px;
+}
+    
+div {
+    padding: 10px 0 1px 0;
+}
+    
+div.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #4a4a4a;
+}
+    
+div.logo {
+    display: block;
+    height: 15%
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
+    background-color: black;
+}
+    
+div.middle {
+    display: block;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}    
+
+div.about {
+    background-color: black;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    height: 15%;
+    width: 100%;
+    padding: 0;
+}
+
+/*Template ends here*/
+  
+.button1 {
+    /*Button*/
+    border-radius: 25px;
+    background-color: #FE5531;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 200px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+    color: white;
+}
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+label {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 800px;
+    text-align: right;
+}
+
+input {
+    border-radius: 15px;
+    display: inline-block;
+    float: left;
+}

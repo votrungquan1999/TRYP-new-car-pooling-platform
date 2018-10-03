@@ -1,0 +1,125 @@
+/***************CONTENT SECTION***************/
+
+/*Custom font for logo*/
+@font-face {
+    font-family: 'OogieBoogie';
+    src: url('OogieBoogie.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*Logo template starts here*/
+.logo h1 {
+    text-align:center;
+    position: relative;
+    margin: 0 auto;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    font-size: 8rem;
+    color: white;
+}
+
+.logo p {
+    text-align:center;
+    margin: 0 auto;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    font-size: 3rem;
+    padding-bottom: 20px;
+    color: white;
+}
+/*Logo template ends here*/
+
+
+.middle {
+    text-align: center;
+    margin: 0 auto;
+    font-family: Courier, monospace;
+    font-size: 3rem;
+}
+
+
+/*About template starts here*/
+.about h1 {
+    text-align: center;
+    width: 100%;
+    font-family: Courier, monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+    
+.about p {
+    text-align: left;
+    margin-left: 200px;
+    font-family: Courier, monospace;
+    font-weight: 1000;
+    font-size: 2rem;
+    color: #ffffff;
+}
+/*About template ends here*/
+
+/*****************YOUR CODE HERE*****************/
+
+
+
+/***************BOXES AND CONTAINERS SECTION***************/
+
+/*Template starts here*/
+html {
+    padding: 0;
+    margin: 0;
+    background-color: #4a4a4a;
+}
+
+    
+.middle {
+    background-image: url("d598225506e8003a5cdbc0c7e910750e.jpg");
+    background-size: 100% 850px;
+}
+    
+div {
+    padding: 10px 0 1px 0;
+}
+    
+div.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #4a4a4a;
+}
+    
+div.logo {
+    display: block;
+    height: 15%
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
+    background-color: black;
+}
+    
+div.middle {
+    display: block;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}    
+
+div.about {
+    background-color: black;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    height: 15%;
+    width: 100%;
+    padding: 0;
+}
+
+/*Template ends here*/
+
+
+/*****************YOUR CODE HERE*****************/
+  
+
+
+    
+    
