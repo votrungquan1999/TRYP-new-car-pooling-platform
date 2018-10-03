@@ -19,8 +19,9 @@ def login_view(request):
         if form.is_valid():
             #log user in
             user = form.get_user()
+            login(request,user)
 
-            return redirect('article:list')
+            return redirect('roleChoice:roleChoice')
 
 
     else:
