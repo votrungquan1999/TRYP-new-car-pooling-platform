@@ -33,3 +33,7 @@ def logout_view(request):
     if request.method =='POST':
         pass
 
+
+
+def forgot_view(request):
+    return render(request,"accounts/forgot.html")
