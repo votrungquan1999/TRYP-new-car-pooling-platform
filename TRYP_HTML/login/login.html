@@ -32,6 +32,8 @@
     color: black;
     text-decoration: none;
 }
+        
+
 .button {
     /*Button*/
     border-radius: 25px;
@@ -53,6 +55,36 @@
 }
 
 .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+        
+.button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    
+    /*Text*/
+    font-weight: 100;
+    font-family: Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+
+}
+
+.button2:hover {;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -101,6 +133,9 @@ input {
     <button class = "button" action="input" type="submit" >Log in</button>
     <br>
         </form>
+    <form action="{%url 'Home:Home' %}">
+    <button class = "button2" >Go back</button>
+    </form>
     </div>    
     
 </div>
