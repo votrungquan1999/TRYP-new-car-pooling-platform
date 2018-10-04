@@ -23,14 +23,6 @@
     text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
 }
 
-.button2 {
-    font-weight: 100;
-    font-family: Courier, monospace;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: white;
-}
 
 .button1 {
     /*Button*/
@@ -70,6 +62,14 @@
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    
+    /*Text*/
+    font-weight: 100;
+    font-family: Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
 }
 
 .button2:hover {;
@@ -136,7 +136,7 @@ input {
     <button class = "button1" action="input" type="submit" >Sign up</button>
     </form>
     <br>
-    <form action="RETURN_TO_HOMEPAGE">
+    <form action="{%url 'Home:Home' %}">
     <button class = "button2" >Go back</button>
     </form>
                              
