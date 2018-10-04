@@ -8,6 +8,6 @@ def rolechoice_view(request):
     user_id = request.session['user_id']
     if user_id is not None:
         user = User.objects.get(pk=user_id)
-        return HttpResponse("login successfully")
+        return render(request, 'rolechoice/rolechoice.html')
     else:
         raise Http404
