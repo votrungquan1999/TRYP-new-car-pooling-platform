@@ -31,13 +31,9 @@ def login_view(request):
 
 def logout_view(request):
     if request.method =='POST':
-<<<<<<< HEAD
         pass
 
 
 
 def forgot_view(request):
     return render(request,"accounts/forgot.html")
-=======
-        pass
->>>>>>> 12aee0b1935c04154062fa4a3ed7c304c6c7d86b

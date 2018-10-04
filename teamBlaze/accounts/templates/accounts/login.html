@@ -58,7 +58,7 @@
     <br>
     <br>
     <br>
-    <form class="site-form" action="{% url 'accounts:login'% }" method="post">
+    <form class="site-form" action="{% url 'accounts:login' %}" method="post">
       {% csrf_token %}
       {{form}}
       <input type="submit" name="" value="Login">

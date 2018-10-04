@@ -41,13 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'About',
     'rolechoice',
-<<<<<<< HEAD
-    'passenger_interface',
-    'driver_interface'
-=======
-    'driver_interface',
     'pssngr_interface',
->>>>>>> 12aee0b1935c04154062fa4a3ed7c304c6c7d86b
+    'driver_interface'
 ]
 
 MIDDLEWARE = [
