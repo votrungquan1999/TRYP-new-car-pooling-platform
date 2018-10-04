@@ -58,7 +58,7 @@
     <br>
     <br>
     <br>
-    <form class="site-form" action="/accounts/login/" method="post">
+    <form class="site-form" action="{% url 'accounts:login'% }" method="post">
       {% csrf_token %}
       {{form}}
       <input type="submit" name="" value="Login">
@@ -67,9 +67,9 @@
     <br>
     <a href ="{% url 'accounts:signup' %}" style="color:brown">Need an account? Join us!</a></p>
     <br>
-    Password: <input type="text" name="Password">
+
     <br>
-    <p><a href ="INSERT_FORGOT_PASSWORD_PAGE_HERE" style="color:brown">Forgot your password?</a></p>
+    <p><a href ="{% url 'accounts:forgot'%}" style="color:brown">Forgot your password?</a></p>
     <br>
     <button class = "button" action="input" type="submit" >Log in</button>
     <br>

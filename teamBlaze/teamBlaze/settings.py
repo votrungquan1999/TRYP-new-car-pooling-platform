@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'accounts',
     'About',
     'rolechoice',
+    'passenger_interface',
+    'driver_interface'
 ]
 
 MIDDLEWARE = [
