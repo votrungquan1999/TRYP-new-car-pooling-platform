@@ -1,28 +1,5 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Sign Up Page!</title>
-  </head>
-  <body>
-    <h1>This is the Sign up Page </h1>
-    <form class="site-form" action="/accounts/signup/" method="post">
-      {% csrf_token %}
-      {{form}}
-      <input type="submit" name="" value="Sign Up">
-
-    </form>
-
-  </body>
-</html>
-
-
-
-<!--<html lang="en">
-=======
 <html lang="en">
->>>>>>> 4acf3aba253708115c27a12a3812681d4e03310c
 <head>
 
     <meta charset="utf-8">
@@ -114,9 +91,10 @@ input {
     float: left;
 }
 
-        input:invalid {
-            background-color:palevioletred;
-        }
+input:invalid {
+    background-color:palevioletred;
+}
+        
 </style>
 
 
@@ -153,7 +131,7 @@ input {
     <label>Password:</label> {{form.password1}}
     <br>
     <br>
-    <label>Password Confirmation:</label> {{form.password2}}
+    <label>Password confirmation:</label> {{form.password2}}
     <br>
     <br>
     <button class = "button1" type="submit" >Sign up</button>
