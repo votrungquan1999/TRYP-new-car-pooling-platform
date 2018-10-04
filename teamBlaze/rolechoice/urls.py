@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'roleChoice'
 urlpatterns = [
-    path('', views.rolechoice_view, name = "roleChoice")
+    path('', views.rolechoice_view, name = "roleChoice"),
 ]

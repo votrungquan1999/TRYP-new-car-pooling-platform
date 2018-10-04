@@ -22,11 +22,18 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Home.urls')),
+    path('Home', include('Home.urls')),
     path('accounts/', include('accounts.urls')),
     path('about/', include('About.urls')),
+<<<<<<< HEAD
     path('rolechoice/', include('rolechoice.urls'))
 
+=======
+    path('rolechoice/', include('rolechoice.urls')),
+    path('', include('Home.urls')),
+    path('passenger/', include('pssngr_interface.urls')),
+    path('driver/', include('driver_interface.urls')),
+>>>>>>> 12aee0b1935c04154062fa4a3ed7c304c6c7d86b
     ]
 
 
