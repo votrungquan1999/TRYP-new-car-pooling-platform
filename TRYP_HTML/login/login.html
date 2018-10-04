@@ -4,13 +4,61 @@
   
     <meta charset="utf-8">
     <title>TRYP</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/style.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
     <script src="js/bootstrap.min.js"></script>
     
+    <style>
+    
+.middle {
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    font-family: Courier, monospace;
+    font-size: 3rem;
+    color: saddlebrown;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
+}
+
+.middle p {
+    text-align: left;
+    margin-left: 860px;
+    font-weight: 100;
+    font-family: Courier, monospace;
+    font-size: 2rem;
+    color: black;
+    text-decoration: none;
+}
+    .button {
+    /*Button*/
+    border-radius: 25px;
+    background-color: #FE5531;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 200px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+    color: white;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+input {
+    border-radius: 15px;
+}
+    </style>
 
 </head>
 <body>
@@ -39,10 +87,11 @@
     <br>
     <br>
     <br>
-    <form action="PUT_THE_ACCOUNT_INFO_LINK_HERE">
+    <form class="site-form" action="/accounts/login/" method="post">
+      {% csrf_token %}
     Username: <input type="text" name="Username">
     <br>
-    <p><a href ="D:\SE2 Project\TRYP\signup\signup.html" style="color:brown">Need an account? Join us!</a></p>
+    <p><a href ="{% url 'accounts:signup' %}" style="color:brown">Need an account? Join us!</a></p>
     <br>
     Password: <input type="text" name="Password">
     <br>
