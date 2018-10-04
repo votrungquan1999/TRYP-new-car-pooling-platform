@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -14,4 +14,70 @@
     </form>
 
   </body>
+</html>-->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>TRYP</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/static/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+
+<!--Template starts-->
+
+<div class="container">
+
+    <!--App logo-->
+    <div class ="logo">
+        <h1>T.R.Y.P</h1>
+        <p>Are you tryppin'? </p>
+    </div>
+
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <p><a href="{%url About: 'about_info%'}"> About us</a></p>
+    </div>
+<!--Template ends-->
+
+    <!--Account options-->
+    <div class ="middle">
+    <br>
+    <br>
+    <br>
+    <br>
+    <form class="site-form" action="/accounts/login/" method="post">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" name="" value="Login">
+
+    </form>
+    <br>
+    <p><a href ="D:\SE2 Project\TRYP\signup\signup.html" style="color:brown">Need an account? Join us!</a></p>
+    <br>
+    Password: <input type="text" name="Password">
+    <br>
+    <p><a href ="INSERT_FORGOT_PASSWORD_PAGE_HERE" style="color:brown">Forgot your password?</a></p>
+    <br>
+    <button class = "button" action="input" type="submit" >Log in</button>
+    <br>
+        </form>
+    </div>
+
+</div>
+
+
+</body>
 </html>
