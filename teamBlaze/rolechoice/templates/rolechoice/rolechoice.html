@@ -1,16 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Choose a role</title>
-    <li>
-        <a href="../driver/">DRIVER</a>
-    </li>
-    <li>
-        <a href="../passenger/">PASSENGER</a>
-    </li>
+
+    <meta charset="utf-8">
+    <title>TRYP</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+    
+.middle {
+    text-align: center;
+    margin: 0;
+    font-weight: bold;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    font-size: 6rem;
+    color: saddlebrown;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
+}
+        
+.button {
+    /*Button*/
+    border-radius: 25px;
+    background-color: #f4511e;
+    height: 150px;
+    width: 350px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    
+    /*Text*/
+    text-align:center;
+    text-decoration: none;
+    color: white;
+    margin: 0 auto;
+    font-family: 'Comic Sans MS', 'Palatino Linotype', serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+    </style>
 </head>
 <body>
+
+
+
+<div class="container">
+
+    <!--App logo-->
+    <div class ="logo">
+        <h1>T.R.Y.P</h1>
+        <p>Are you tryppin'? </p>
+    </div>
+
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <p><a href="{%url 'About:about_info' %}"> About us</a></p>
+    </div>
+<!--Template ends-->
+
+    <!--Account options-->
+    <div class ="middle">
+    <br>
+        <p>What takes you here today?</p>
+    <br>
+        <div style="float: left; margin-left: 550px">
+        <form action="{% url 'driver_interface:driver_view' %}">
+        <button class="button button1"><span>I'm Driving!</span></button>
+        </form>
+        </div>
+        
+        <div style="float: right; margin-right: 550px">
+        <form action="{% url 'pssngr_interface:pssngr_view' %}">
+        <button class="button button2" ><span>I want a ride!</span></button>
+        </form>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
