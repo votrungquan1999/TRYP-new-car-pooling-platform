@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>TRYP</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+ 
+
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <!--App logo-->
+    <div class ="logo">
+        <h1>T.R.Y.P</h1>
+        <p>Are you tryppin'? </p>
+    </div>
+
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <p><a href="{%url 'About:about_info' %}"> About us</a></p>
+    </div>
+<!--Template ends-->
+
+    <!--Account options-->
+
+    <br>
+    <br>
+    <br>
+    
+     {% block content %}
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}
+    
+
+
+</div>
+
+</body>
+</html>
