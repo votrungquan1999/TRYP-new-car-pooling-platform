@@ -1,5 +1,28 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up Page!</title>
+  </head>
+  <body>
+    <h1>This is the Sign up Page </h1>
+    <form class="site-form" action="/accounts/signup/" method="post">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" name="" value="Sign Up">
+
+    </form>
+
+  </body>
+</html>
+
+
+
+<!--<html lang="en">
+=======
 <html lang="en">
+>>>>>>> b2262f306dc0b7b03b610402bc3daacd7e3528e2
 <head>
 
     <meta charset="utf-8">
@@ -12,7 +35,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <style>
-    
+
 .middle {
     text-align: center;
     margin: 0;
@@ -62,7 +85,7 @@
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
-    
+
     /*Text*/
     font-weight: 100;
     font-family: Courier, monospace;
