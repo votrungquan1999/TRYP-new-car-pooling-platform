@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def driver_view(request):
-    return HttpResponse("you are a driver")
+    user_id = request.session['user_id']
+    
+    return render(request, 'driver_interface/driver_options.html')
