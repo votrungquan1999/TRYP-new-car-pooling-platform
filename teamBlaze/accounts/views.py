@@ -10,7 +10,7 @@ def signup_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data['user_name']
+            username = form.cleaned_data['username']
             user = User.objects.get(username = username)
             request.session['user_id'] = user.id
             return redirect('accounts:userInfo')
