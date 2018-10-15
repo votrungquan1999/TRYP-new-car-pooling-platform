@@ -1,14 +1,19 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, Http404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .forms import infoForm
+from . models import *
+from django.contrib.auth.models import User
 
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('accounts:login')
+            username = form.cleaned_data['user_name']
+            user = User.objects.get(username = username)
+            request.session['user_id'] = user.id
+            return redirect('accounts:userInfo')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form' : form })
@@ -22,17 +27,14 @@ def login_view(request):
             user = form.get_user()
             login(request,user)
             request.session['user_id'] = user.id
-            return redirect('roleChoice:roleChoice')
+            return redirect('../../rolechoice')
     else:
         form = AuthenticationForm()
     return render(request,"accounts/login.html",{'form':form})
 
-
 def logout_view(request):
     if request.method =='POST':
         pass
-
-
 
 def forgot_view(request):
     return render(request,"accounts/forgot.html")
@@ -40,5 +42,15 @@ def forgot_view(request):
 def get_user_info(request):
     form = infoForm(request.POST)
     if form.is_valid():
-        form.save()
-    return render(request, "accounts/get_info.html", {'form' : form})
+        first_name = form.cleaned_data['first_name']
+        last_name = form.cleaned_data['last_name']
+        email = form.cleaned_data['email']
+        user_id = request.session['user_id']
+        user = User.objects.get(id = user_id)
+        if user_id is not None:
+            my_user = MyUser(email = email, last_name = last_name, first_name = first_name, user = user)
+            my_user.save()
+        else:
+            raise Http404
+        return redirect('accounts:login')
+    return render(request, 'accounts/get_info.html', {'form' : form})
