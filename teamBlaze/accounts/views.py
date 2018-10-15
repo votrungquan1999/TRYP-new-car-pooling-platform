@@ -46,9 +46,9 @@ def get_user_info(request):
         last_name = form.cleaned_data['last_name']
         email = form.cleaned_data['email']
         user_id = request.session['user_id']
-        user = User.objects.get(id = user_id)
-        request.session['user_id'] = None
         if user_id is not None:
+            user = User.objects.get(id = user_id)
+            request.session['user_id'] = None
             my_user = MyUser(email = email, last_name = last_name, first_name = first_name, user = user)
             my_user.save()
         else:

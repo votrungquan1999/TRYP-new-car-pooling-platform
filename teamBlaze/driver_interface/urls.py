@@ -4,4 +4,5 @@ from . import views
 app_name = 'driver_interface'
 urlpatterns = [
     path('', views.driver_view, name = 'driver_view'),
+    path('create/', views.create_car, name = 'create_car'),
 ]
