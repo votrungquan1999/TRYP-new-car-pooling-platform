@@ -29,7 +29,8 @@ def create_car(request):
             year = form.cleaned_data['year']
             model = form.cleaned_data['model']
             manufacturer = form.cleaned_data['manufacturer']
-            car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer)
+            my_user = (User.objects.get(id = user_id)).myuser
+            car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
             redirect("driver_interface : driver_view")
         return render(request, 'driver_interface/create_car.html', {'form': form})

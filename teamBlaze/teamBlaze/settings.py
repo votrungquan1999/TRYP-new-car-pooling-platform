@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'About',
     'rolechoice',
     'pssngr_interface',
-    'driver_interface'
+    'driver_interface',
 ]
 
 MIDDLEWARE = [
