@@ -32,7 +32,7 @@ def create_car(request):
             my_user = (User.objects.get(id = user_id)).myuser
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
-            redirect("driver_interface : driver_view")
+            redirect("driver_interface:driver_view")
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
         return Http404
