@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post" action = "/accounts/userInfo/" >
+    <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="OK">

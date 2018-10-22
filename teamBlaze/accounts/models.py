@@ -8,7 +8,7 @@ class MyUser(models.Model):
     user = models.OneToOneField(User,
                                 on_delete=models.CASCADE,
                                 primary_key= True)
-    email = models.EmailField(max_length=250)
+    email = models.CharField(max_length=100)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
 

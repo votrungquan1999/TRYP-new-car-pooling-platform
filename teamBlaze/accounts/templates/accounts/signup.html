@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    
 <head>
 
     <meta charset="utf-8">
@@ -94,7 +96,7 @@ input {
 input:invalid {
     background-color:palevioletred;
 }
-
+        
 </style>
 
 
@@ -102,21 +104,20 @@ input:invalid {
 <body>
 
 
-
+<!--Template starts-->
+    
 <div class="container">
-
+    
     <!--App logo-->
     <div class ="logo">
+        <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
-
-    <!--About section-->
-    <div class="about">
-    <h1>&copy; Team Blaze&trade; </h1>
-        <p><a href="{%url 'About:about_info' %}"> About us</a></p>
-    </div>
+    
 <!--Template ends-->
+
+<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
 
     <!--Account options-->
     <div class ="middle">
@@ -141,6 +142,19 @@ input:invalid {
     <button class = "button2" >Go back</button>
     </form>
     </div>
+<!--------------------------------YOUR CODE ENDS HERE-------------------------------->
+    
+<!--Template starts-->
+    
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <form action ="{% url 'About:about_info' %}">
+        <button class = "buttonn" >About us</button>
+        </form>
+    </div>
+    
+<!--Template ends-->
 
 </div>
 

@@ -34,7 +34,7 @@
 }
         
 
-.button {
+.button1 {
     /*Button*/
     border-radius: 25px;
     background-color: #FE5531;
@@ -54,7 +54,7 @@
     color: white;
 }
 
-.button:hover {
+.button1:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
         
@@ -108,16 +108,14 @@ input:invalid {
     
     <!--App logo-->
     <div class ="logo">
+        <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
     
-    <!--About section-->
-    <div class="about">
-    <h1>&copy; Team Blaze&trade; </h1>
-        <p><a href="{%url 'About:about_info' %}"> About us</a></p>
-    </div>
 <!--Template ends-->
+
+<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
 
     <!--Account options-->
     <div class ="middle">
@@ -135,7 +133,7 @@ input:invalid {
     <br>
     <p><a href ="{% url 'accounts:forgot' %}" style="color:brown">Forgot your password?</a></p>
     <br>
-    <button class = "button" action="input" type="submit" >Log in</button>
+    <button class = "button1" action="input" type="submit" >Log in</button>
     <br>
     </form>
     
@@ -143,6 +141,21 @@ input:invalid {
     <button class = "button2" >Go back</button>
     </form>
     </div>    
+    
+    <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
+    
+<!--Template starts-->
+    
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <form action ="{% url 'About:about_info' %}">
+        <button class = "buttonn" >About us</button>
+        </form>
+    </div>
+    
+<!--Template ends-->
+
     
 </div>
    
