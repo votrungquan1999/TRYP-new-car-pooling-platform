@@ -3,22 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="e9e476e3-a03f-4620-890a-c1aee226b9d5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/migrations/0002_delete_users.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/migrations/0003_feedback.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Home/migrations/0004_delete_feedback.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/About/templates/About/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/About/templates/About/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/templates/Home/feedback.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Home/templates/Home/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Home/templates/Home/homepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0002_auto_20181014_2300.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0003_auto_20181014_2356.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0004_auto_20181021_2211.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0005_auto_20181023_0041.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0006_auto_20181023_0955.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0002_auto_20181023_1848.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0003_auto_20181023_1852.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/signup.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/blueBG.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/transBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/driver_interface/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/migrations/0002_auto_20181023_0114.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/migrations/0003_auto_20181023_0955.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver_interface/migrations/0002_auto_20181023_1848.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/driver_interface/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/driver_interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/views.py" afterDir="false" />
     </list>
@@ -46,25 +46,25 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="16" />
-          <entry key="py" value="169" />
+          <entry key="py" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="16" />
-          <entry key="Python" value="169" />
+          <entry key="Python" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="935" />
-          <entry key="py" value="7031" />
+          <entry key="py" value="7067" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="935" />
-          <entry key="Python" value="7031" />
+          <entry key="Python" value="7067" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -72,15 +72,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/driver_interface/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+            <state relative-caret-position="765">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
-                <marker date="1540335146349" expanded="true" signature="2759:2760" ph="..." />
-                <marker date="1540335146349" expanded="true" signature="2759:2764" ph="..." />
+                <marker date="1540336542411" expanded="true" signature="2759:2760" ph="..." />
+                <marker date="1540336542411" expanded="true" signature="2759:2764" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accounts/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,35 +108,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accounts/views.py">
+        <entry file="file://$PROJECT_DIR$/driver_interface/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/accounts/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="25" selection-end-column="61" />
+            <state relative-caret-position="481">
+              <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#45#0" expanded="true" />
+                <marker date="1540336014535" expanded="true" signature="626:1594" ph="..." />
+                <marker date="1540336014535" expanded="true" signature="1618:1619" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/driver_interface/views.py">
+        <entry file="file://$PROJECT_DIR$/driver_interface/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+            <state relative-caret-position="736">
+              <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
               <folding>
-                <element signature="e#0#45#0" expanded="true" />
-                <marker date="1540335062952" expanded="true" signature="626:1594" ph="..." />
-                <marker date="1540335062952" expanded="true" signature="1618:1619" ph="..." />
+                <marker date="1540303873131" expanded="true" signature="52:57" ph="..." />
+                <marker date="1540303873131" expanded="true" signature="2589:2590" ph="..." />
+                <marker date="1540303873131" expanded="true" signature="2589:2594" ph="..." />
               </folding>
             </state>
           </provider>
@@ -165,10 +170,10 @@
         <option value="$PROJECT_DIR$/driver_interface/urls.py" />
         <option value="$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html" />
         <option value="$PROJECT_DIR$/driver_interface/forms.py" />
-        <option value="$PROJECT_DIR$/accounts/models.py" />
-        <option value="$PROJECT_DIR$/driver_interface/views.py" />
-        <option value="$PROJECT_DIR$/driver_interface/models.py" />
         <option value="$PROJECT_DIR$/accounts/admin.py" />
+        <option value="$PROJECT_DIR$/driver_interface/views.py" />
+        <option value="$PROJECT_DIR$/accounts/models.py" />
+        <option value="$PROJECT_DIR$/driver_interface/models.py" />
       </list>
     </option>
   </component>
@@ -207,36 +212,6 @@
               <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
               <item name="teamBlaze" type="462c0819:PsiDirectoryNode" />
               <item name="driver_interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="teamBlaze" type="462c0819:PsiDirectoryNode" />
-              <item name="driver_interface" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="teamBlaze" type="462c0819:PsiDirectoryNode" />
-              <item name="driver_interface" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="teamBlaze" type="462c0819:PsiDirectoryNode" />
-              <item name="driver_interface" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="driver_interface" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="teamBlaze" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
-              <item name="teamBlaze" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="teamBlaze" type="b2602c69:ProjectViewProjectNode" />
@@ -368,13 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rolechoice/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rolechoice/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -438,13 +406,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Home/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Home/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Home/admin.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -533,18 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/driver_interface/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-          <folding>
-            <marker date="1540303873131" expanded="true" signature="52:57" ph="..." />
-            <marker date="1540303873131" expanded="true" signature="2589:2590" ph="..." />
-            <marker date="1540303873131" expanded="true" signature="2589:2594" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Home/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -599,22 +548,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+    <entry file="file://$PROJECT_DIR$/driver_interface/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="28" />
+        <state relative-caret-position="736">
+          <caret line="74" column="42" lean-forward="true" selection-start-line="74" selection-start-column="42" selection-end-line="74" selection-end-column="42" />
+          <folding>
+            <marker date="1540303873131" expanded="true" signature="52:57" ph="..." />
+            <marker date="1540303873131" expanded="true" signature="2589:2590" ph="..." />
+            <marker date="1540303873131" expanded="true" signature="2589:2594" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/driver_interface/views.py">
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-            <marker date="1540335062952" expanded="true" signature="626:1594" ph="..." />
-            <marker date="1540335062952" expanded="true" signature="1618:1619" ph="..." />
-          </folding>
+        <state relative-caret-position="782">
+          <caret line="51" column="28" lean-forward="true" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -625,24 +574,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/driver_interface/models.py">
+    <entry file="file://$PROJECT_DIR$/driver_interface/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="76" column="24" lean-forward="true" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
+        <state relative-caret-position="481">
+          <caret line="31" column="44" lean-forward="true" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="44" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
-            <marker date="1540335146349" expanded="true" signature="2759:2760" ph="..." />
-            <marker date="1540335146349" expanded="true" signature="2759:2764" ph="..." />
+            <element signature="e#0#45#0" expanded="true" />
+            <marker date="1540336014535" expanded="true" signature="626:1594" ph="..." />
+            <marker date="1540336014535" expanded="true" signature="1618:1619" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Home/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rolechoice/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/accounts/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="25" selection-end-column="61" />
+        <state relative-caret-position="391">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driver_interface/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+            <marker date="1540336542411" expanded="true" signature="2759:2760" ph="..." />
+            <marker date="1540336542411" expanded="true" signature="2759:2764" ph="..." />
           </folding>
         </state>
       </provider>

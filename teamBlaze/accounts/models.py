@@ -15,7 +15,7 @@ class MyUser(models.Model):
     def __str__(self):
         return self.user.username
 
-'''class Car(models.Model):
+class Car(models.Model):
     my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
     seats = models.IntegerField()
     year = models.IntegerField()
@@ -23,4 +23,4 @@ class MyUser(models.Model):
     manufacturer = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.my_user.user.username + ' ' + self.model'''
+        return self.my_user.user.username + ' ' + self.model

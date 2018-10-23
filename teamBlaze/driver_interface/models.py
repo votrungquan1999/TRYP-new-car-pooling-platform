@@ -75,5 +75,5 @@ class Post(models.Model):
     my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
 
 class CarPoolPost(Post):
-    #car = Car()
-    pass
+    car = models.ForeignKey(Car, on_delete=models.CASCADE, default=None)
+    #pass

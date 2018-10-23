@@ -1,7 +1,28 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Sign Up Page!</title>
+  </head>
+  <body>
+    <h1>This is the Sign up Page </h1>
+    <form class="site-form" action="/accounts/signup/" method="post">
+      {% csrf_token %}
+      {{form}}
+      <input type="submit" name="" value="Sign Up">
 
+    </form>
+
+  </body>
+</html>
+
+
+
+<!--<html lang="en">
+=======
 <html lang="en">
-    
+>>>>>>> b2262f306dc0b7b03b610402bc3daacd7e3528e2
 <head>
 
     <meta charset="utf-8">
@@ -104,20 +125,21 @@ input:invalid {
 <body>
 
 
-<!--Template starts-->
-    
+
 <div class="container">
-    
+
     <!--App logo-->
     <div class ="logo">
-        <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
-    
-<!--Template ends-->
 
-<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <p><a href="{%url 'About:about_info' %}"> About us</a></p>
+    </div>
+<!--Template ends-->
 
     <!--Account options-->
     <div class ="middle">
@@ -142,19 +164,6 @@ input:invalid {
     <button class = "button2" >Go back</button>
     </form>
     </div>
-<!--------------------------------YOUR CODE ENDS HERE-------------------------------->
-    
-<!--Template starts-->
-    
-    <!--About section-->
-    <div class="about">
-    <h1>&copy; Team Blaze&trade; </h1>
-        <form action ="{% url 'About:about_info' %}">
-        <button class = "buttonn" >About us</button>
-        </form>
-    </div>
-    
-<!--Template ends-->
 
 </div>
 
