@@ -72,7 +72,8 @@ class Post(models.Model):
     bags = models.IntegerField()
     date = models.DateField()
     time = models.TimeField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
 
 class CarPoolPost(Post):
-    car = Car()
+    #car = Car()
+    pass

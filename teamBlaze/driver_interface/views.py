@@ -30,10 +30,10 @@ def post_car_pool(request):
             bags = form.cleaned_data['bags']
             date = form.cleaned_data['date']
             time = form.cleaned_data['time']
-            user = User.objects.get(id=user_id)
-            car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, city=city, price=price,
-                                        bags=bags, date=date, time=time, user=user)
-            #car_pool_post.save()
+            my_user = (User.objects.get(id=user_id)).myuser
+            car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, city=city,
+                                        price=price, bags=bags, date=date, time=time, my_user=my_user)
+            car_pool_post.save()
             return redirect('driver_interface:driver_view')
         return render(request, 'driver_interface/create_car_pool.html', {'form':form})
     else:
@@ -48,9 +48,9 @@ def create_car(request):
             year = form.cleaned_data['year']
             model = form.cleaned_data['model']
             manufacturer = form.cleaned_data['manufacturer']
-            user = User.objects.get(id = user_id)
-            car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, user = user)
-            car.save()
+            my_user = (User.objects.get(id = user_id)).myuser
+            #car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
+            #car.save()
             return redirect('driver_interface:driver_view')
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
