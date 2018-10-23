@@ -31,8 +31,8 @@ def post_car_pool(request):
             date = form.cleaned_data['date']
             time = form.cleaned_data['time']
             user = User.objects.get(id=user_id)
-            car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, city=city, price=price, bags=bags,
-                                        date=date, time=time, user=user)
+            car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, city=city, price=price,
+                                        bags=bags, date=date, time=time, user=user)
             car_pool_post.save()
             return redirect('driver_interface:driver_view')
         return render(request, 'driver_interface/create_car_pool.html', {'form':form})

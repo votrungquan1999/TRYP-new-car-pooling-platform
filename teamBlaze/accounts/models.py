@@ -17,10 +17,10 @@ class MyUser(models.Model):
 
 class Car(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
-    seats = models.IntegerField()#default=1)
-    year = models.IntegerField()#default=2018)
-    model = models.CharField(max_length=100)#, default="")
-    manufacturer = models.CharField(max_length=100)#, default="")
+    seats = models.IntegerField()
+    year = models.IntegerField()
+    model = models.CharField(max_length=100)
+    manufacturer = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.my_user.user.username + self.model
+        return self.my_user.user.username + ' ' + self.model

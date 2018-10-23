@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from accounts.models import *
 
 # Create your models here.
 STATE_CHOICE = (("Alabama", "AL"),
@@ -71,7 +72,7 @@ class Post(models.Model):
     bags = models.IntegerField()
     date = models.DateField()
     time = models.TimeField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
 
 class CarPoolPost(Post):
-    pass
+    car = Car()
