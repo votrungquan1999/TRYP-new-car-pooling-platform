@@ -18,7 +18,12 @@ def driver_view(request):
         return Http404
 
 def post_car_pool(request):
-    pass
+    user_id = request.session['user_id']
+    if user_id is not None:
+        form = createCarPoolForm(request.POST)
+        if form.is_valid():
+            seats = form.cleaned_data['seats']
+            destination_state = form.cleaned_data['destination_state']
 
 def create_car(request):
     user_id = request.session['user_id']
