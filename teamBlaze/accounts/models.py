@@ -16,7 +16,7 @@ class MyUser(models.Model):
         return self.user.username
 
 class Car(models.Model):
-    my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     seats = models.IntegerField()#default=1)
     year = models.IntegerField()#default=2018)
     model = models.CharField(max_length=100)#, default="")

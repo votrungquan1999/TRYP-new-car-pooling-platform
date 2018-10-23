@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import Http404
 from .forms import *
 from accounts.models import *
+from .models import *
 
 # Create your views here.
 
@@ -24,6 +25,19 @@ def post_car_pool(request):
         if form.is_valid():
             seats = form.cleaned_data['seats']
             destination_state = form.cleaned_data['destination_state']
+            city = form.cleaned_data['city']
+            price = form.cleaned_data['price']
+            bags = form.cleaned_data['bags']
+            date = form.cleaned_data['date']
+            time = form.cleaned_data['time']
+            user = User.objects.get(id=user_id)
+            car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, city=city, price=price, bags=bags,
+                                        date=date, time=time, user=user)
+            car_pool_post.save()
+            return redirect('driver_interface:driver_view')
+        return render(request, 'driver_interface/create_car_pool.html', {'form':form})
+    else:
+        return Http404
 
 def create_car(request):
     user_id = request.session['user_id']
@@ -34,14 +48,10 @@ def create_car(request):
             year = form.cleaned_data['year']
             model = form.cleaned_data['model']
             manufacturer = form.cleaned_data['manufacturer']
-            my_user = (User.objects.get(id = user_id)).myuser
-            car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
+            user = User.objects.get(id = user_id)
+            car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, user = user)
             car.save()
-<<<<<<< HEAD
-            redirect("driver_interface:driver_view")
-=======
             return redirect('driver_interface:driver_view')
->>>>>>> 8cf950ed50d699cb90dac7c871b259f0d2951805
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
         return Http404
