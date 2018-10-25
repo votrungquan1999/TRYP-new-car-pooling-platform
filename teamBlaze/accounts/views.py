@@ -33,9 +33,8 @@ def login_view(request):
     return render(request,"accounts/login.html",{'form':form})
 
 def logout_view(request):
-    if request.method == "POST":
-        logout(request)
-        return redirect("Home:Home")
+    logout(request)
+    return redirect("Home:Home")
     return HttpResponse("Logout sucessful")
 
 def forgot_view(request):
