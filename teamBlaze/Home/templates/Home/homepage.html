@@ -7,74 +7,6 @@
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/bootstrap-theme.css">
     <link rel="stylesheet" href="/static/style.css">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="static/bootstrap.min.js"></script>
-    
- <style>
-        
-.middle {
-    text-align: center;
-    margin: 0 auto;
-    font-family: Courier, monospace;
-    font-size: 3rem;
-}
-
-.button {
-    /*Button*/
-    border-radius: 25px;
-    background-color: #f4511e;
-    padding: 15px 32px;
-    vertical-align: middle;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 100px;
-    width: 300px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s;
-    transition-duration: 0.4s;
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
-    
-    /*Text*/
-    text-align:center;
-    text-decoration: none;
-    color: white;
-    margin: 0 auto;
-    font-family: Courier, 'Palatino Linotype', serif;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-}
-
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-}
-
-.button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-.button:hover span {
-    padding-right: 25px;
-}
-
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-    </style>
 
 </head>
 <body>
@@ -86,33 +18,45 @@
     
     <!--App logo-->
     <div class ="logo">
+        <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
     
-    <!--About section-->
-    <div class="about">
-    <h1>&copy; Team Blaze&trade; </h1>
-        <p><a href="{% url 'About:about_info' %}"> About us</a></p>
-    </div>
 <!--Template ends-->
 
+<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
     <!--Account options-->
     <div class ="middle">
     <br>
     <br>
     <br>
-    <br>
     <form action="{% url 'accounts:login' %}">
-    <button class ="button button1" style="float"><span>Log in</span></button>
+    <button class ="button" style="float"><span>Log in</span></button>
     </form>
     <br>
     <br>
     <br>
     <form action="{% url 'accounts:signup' %}">
-    <button class="button button2" style="float"><span>Sign up</span></button>
+    <button class="button" style="float"><span>Sign up</span></button>
     </form>
     </div>
+
+<!--------------------------------YOUR CODE ENDS HERE-------------------------------->
+    
+<!--Template starts-->
+    
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <form action ="{% url 'About:about_info' %}">
+        <button class = "buttonn" >About us</button>
+        </form>
+    </div>
+    
+<!--Template ends-->
+
+
     
 </div>
 
