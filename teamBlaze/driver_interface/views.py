@@ -58,16 +58,7 @@ def create_car(request):
 
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
-
-            redirect("driver_interface:driver_view")
-
             return redirect('driver_interface:driver_view')
-
-
-            #car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
-            #car.save()
-            return redirect('driver_interface:driver_view')
-
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
         return Http404
