@@ -58,9 +58,16 @@
     <br>
     <br>
     <br>
-    <form1 action ="{% url 'driver_interface:create_car_pool' %}"><button class="button"><span>Post Carpool</span></button></form1>
-    <form1 action ="{% url 'driver_interface:check_car_pool' %}"><button class="button"><span>Check Carpool</span></button></form1>
-    <form1 action =""><button class="button"><span>Find Passenger</span></button></form1>
+    <!--<a href ="{% url 'driver_interface:create_car_pool' %}">
+        <button class="button"><span>Post Carpool</span></button>
+    </a>-->
+    <form style="display: inline;" action="/driver/create_car_pool/">
+        <button class="button"><span>Post Car Pool</span></button>
+    </form>
+    <form style="display: inline;" action ="/driver/check_car_pool/">
+        <button class="button"><span>Check Carpool</span></button>
+    </form>
+    <form style="display: inline;" action =""><button class="button"><span>Find Passenger</span></button></form>
     </div>
 
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
