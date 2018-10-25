@@ -16,7 +16,7 @@ def signup_view(request):
             return redirect('accounts:userInfo')
     else:
         form = UserCreationForm()
-    return render(request, 'accounts/signup.html', {'form' : form })
+    return render(request, 'accounts/signup1.html', {'form' : form })
 
 
 def login_view(request):
@@ -33,8 +33,9 @@ def login_view(request):
     return render(request,"accounts/login.html",{'form':form})
 
 def logout_view(request):
-    logout(request)
-    return HttpResponse("Logout Successful")
+    if request.method == "POST":
+        logout(request)
+        return redirect(reverse('login'))
 
 def forgot_view(request):
     return render(request,"accounts/forgot.html")
@@ -42,6 +43,7 @@ def forgot_view(request):
 def get_user_info(request):
     form = infoForm(request.POST)
     if form.is_valid():
+
         first_name = form.cleaned_data['first_name']
         last_name = form.cleaned_data['last_name']
         email = form.cleaned_data['email']
@@ -51,6 +53,7 @@ def get_user_info(request):
             request.session['user_id'] = None
             my_user = MyUser(email = email, last_name = last_name, first_name = first_name, user = user)
             my_user.save()
+            form.save()
         else:
             raise Http404
         return redirect('accounts:login')

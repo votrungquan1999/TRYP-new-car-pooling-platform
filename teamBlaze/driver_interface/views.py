@@ -49,7 +49,7 @@ def create_car(request):
             model = form.cleaned_data['model']
             manufacturer = form.cleaned_data['manufacturer']
             my_user = (User.objects.get(id = user_id)).myuser
-<<<<<<< HEAD
+
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
 
@@ -57,11 +57,11 @@ def create_car(request):
 
             return redirect('driver_interface:driver_view')
 
-=======
+
             #car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             #car.save()
             return redirect('driver_interface:driver_view')
->>>>>>> 8aaa1d03f4735adefbd23aa9452515af70881a6f
+
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
         return Http404
