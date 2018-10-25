@@ -53,7 +53,6 @@ def get_user_info(request):
             request.session['user_id'] = None
             my_user = MyUser(email = email, last_name = last_name, first_name = first_name, user = user)
             my_user.save()
-            form.save()
         else:
             raise Http404
         return redirect('accounts:login')
