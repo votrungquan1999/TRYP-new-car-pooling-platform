@@ -19,7 +19,7 @@
     color: hotpink;
     text-shadow: 1px 1px 3px white;
     }
-    
+
     .button {
         display: inline-block;
         margin-left: 65px;
@@ -29,22 +29,22 @@
         display: inline-block;
     }
 </style>
-    
+
 </head>
 <body>
-    
+
 
 <!--Template starts-->
-    
+
 <div class="container">
-    
+
     <!--App logo-->
     <div class ="logo">
         <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
-    
+
 <!--Template ends-->
 
 <!--------------------------------YOUR CODE STARTS HERE-------------------------------->
@@ -71,17 +71,20 @@
     </div>
 
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
-    
+
 <!--Template starts-->
-    
+
     <!--About section-->
     <div class="about">
     <h1>&copy; Team Blaze&trade; </h1>
         <form action ="{% url 'About:about_info' %}">
-        <button class = "buttonn" >About us</button>
+        <button class = "button" >About us</button>
+        </form>
+        <form action="/accounts/logout/">
+        <button class="button">Logout</button>
         </form>
     </div>
-    
+
 <!--Template ends-->
 
 
@@ -90,4 +93,3 @@
 
 </body>
 </html>
-

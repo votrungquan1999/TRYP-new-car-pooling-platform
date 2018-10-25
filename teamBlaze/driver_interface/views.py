@@ -4,7 +4,6 @@ from django.shortcuts import Http404
 from .forms import *
 from accounts.models import *
 from accounts.views import *
-from .models import *
 
 # Create your views here.
 
@@ -34,7 +33,8 @@ def post_car_pool(request):
             date = form.cleaned_data['date']
             time = form.cleaned_data['time']
             title = form.cleaned_data['title']
-            my_user = (User.objects.get(id=user_id)).myuser
+            user = User.objects.get(id=user_id)
+            my_user = user.myuser
             car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, destination_city=destination_city,
                                         price=price, bags=bags, date=date, time=time, my_user=my_user, departure_city = departure_city,
                                         departure_state = departure_state, title = title)
@@ -57,6 +57,14 @@ def create_car(request):
 
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
+
+            redirect("driver_interface:driver_view")
+
+            return redirect('driver_interface:driver_view')
+
+
+            #car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
+            #car.save()
             return redirect('driver_interface:driver_view')
 
         return render(request, 'driver_interface/create_car.html', {'form': form})
@@ -74,7 +82,3 @@ def check_car_pool(request):
 def detail_car_pool(request, post_id):
     post = get_object_or_404(CarPoolPost, id = post_id)
     return render(request, 'driver_interface/detail_car_pool.html', {'post' : post})
-
-
-
-
