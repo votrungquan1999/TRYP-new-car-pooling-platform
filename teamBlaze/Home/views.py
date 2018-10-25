@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect
 
 def Home(request):
-    user_id = request.session['user_id']
-    if user_id is not None:
-        return redirect('roleChoice:roleChoice')
-    else:
+    try:
+        user_id = request.session['user_id']
+        if user_id is not None:
+            return redirect('roleChoice:roleChoice')
+        else:
+            return render(request, 'Home/homepage.html')
+    except:
         return render(request, 'Home/homepage.html')
 
 '''def Feedback_view(request):
