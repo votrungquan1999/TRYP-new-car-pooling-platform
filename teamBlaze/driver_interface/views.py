@@ -4,6 +4,7 @@ from django.shortcuts import Http404
 from .forms import *
 from accounts.models import *
 from accounts.views import *
+from .models import *
 
 # Create your views here.
 
