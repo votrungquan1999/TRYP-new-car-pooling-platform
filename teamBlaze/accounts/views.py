@@ -34,8 +34,8 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
+    request.session['user_id'] = None
     return redirect("Home:Home")
-    return HttpResponse("Logout sucessful")
 
 def forgot_view(request):
     return render(request,"accounts/forgot.html")
