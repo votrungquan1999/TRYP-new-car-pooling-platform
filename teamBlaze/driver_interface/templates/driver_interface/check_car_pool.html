@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>this is the list of your car pool</h1>
+    {% csrf_token %}
+    {% for post in car_pool_posts %}
+        <li>
+            <a href="{{post.id}}/">{{post.title}}</a>
+        </li>
+    {% endfor %}
+</body>
+</html>
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
     <meta charset="utf-8">
     <title>TRYP</title>
@@ -34,11 +52,11 @@
 <body>
     
 
-<!--Template starts-->
+<!--Template starts--
     
 <div class="container">
     
-    <!--App logo-->
+    <!--App logo--
     <div class ="logo">
         <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
@@ -48,33 +66,14 @@
 <!--Template ends-->
 
 <!--------------------------------YOUR CODE STARTS HERE-------------------------------->
-    <!--Account options-->
-    <div class ="middle">
-    <br>
-    <br>
-    <br>
-    <h>What would you like to do?</h>
-    <br>
-    <br>
-    <br>
-    <br>
-    <!--<a href ="{% url 'driver_interface:create_car_pool' %}">
-        <button class="button"><span>Post Carpool</span></button>
-    </a>-->
-    <form style="display: inline;" action="/driver/create_car_pool/">
-        <button class="button"><span>Post Car Pool</span></button>
-    </form>
-    <form style="display: inline;" action ="/driver/check_car_pool/">
-        <button class="button"><span>Check Carpool</span></button>
-    </form>
-    <form style="display: inline;" action =""><button class="button"><span>Find Passenger</span></button></form>
-    </div>
+
+    
 
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
     
 <!--Template starts-->
     
-    <!--About section-->
+    <!--About section--
     <div class="about">
     <h1>&copy; Team Blaze&trade; </h1>
         <form action ="{% url 'About:about_info' %}">
@@ -84,10 +83,4 @@
     
 <!--Template ends-->
 
-
-
-</div>
-
-</body>
-</html>
 
