@@ -65,15 +65,17 @@ STATE_CHOICE = (("Alabama", "AL"),
 )
 
 class Post(models.Model):
+    title = models.CharField(max_length=100, default="")
+    my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
     seats = models.IntegerField()
     destination_state = models.CharField(max_length=100, choices=STATE_CHOICE)
-    city = models.CharField(max_length=100)
+    destination_city = models.CharField(max_length=100)
+    departure_state = models.CharField(max_length=100, choices=STATE_CHOICE)
+    departure_city = models.CharField(max_length=100)
     price = models.FloatField()
     bags = models.IntegerField()
     date = models.DateField()
     time = models.TimeField()
-    my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
 
 class CarPoolPost(Post):
-    car = models.ForeignKey(Car, on_delete=models.CASCADE, default=None)
-    #pass
+    pass

@@ -68,9 +68,12 @@ STATE_CHOICE = (("Alabama", "AL"),
 )
 
 class createCarPoolForm(forms.Form):
+    title = forms.CharField(label="Name of the post")
     seats = forms.IntegerField(label="Number of seats available")
+    departure_state = forms.CharField(label="State of departure", widget=forms.Select(choices=STATE_CHOICE))
+    departure_city = forms.CharField(label="City of departure")
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
-    city = forms.CharField(label="City")
+    destination_city = forms.CharField(label="City of destination")
     price = forms.FloatField(label="Price")
     bags = forms.IntegerField(label="Number of bags carry")
     date = forms.DateField()
