@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/bootstrap-theme.css">
     <link rel="stylesheet" href="/static/style.css">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="/static/bootstrap.min.js"></script>
 
 <style>
 
@@ -43,7 +40,7 @@
     
     <!--App logo-->
     <div class ="logo">
-        <img src="css/transBG.png">
+        <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
@@ -61,9 +58,9 @@
     <br>
     <br>
     <br>
-    <form1 action ="POST_CARPOOL_LINK"><button class="button"><span>Post Carpool</span></button></form1>
-    <form1 action ="CHECK_CARPOOL_LINK"><button class="button"><span>Check Carpool</span></button></form1>
-    <form1 action ="FIND_PASSENGER_LINK"><button class="button"><span>Find Passenger</span></button></form1>
+    <form1 action ="{% url 'driver_interface:create_car_pool' %}"><button class="button"><span>Post Carpool</span></button></form1>
+    <form1 action ="{% url 'driver_interface:check_car_pool' %}"><button class="button"><span>Check Carpool</span></button></form1>
+    <form1 action =""><button class="button"><span>Find Passenger</span></button></form1>
     </div>
 
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
