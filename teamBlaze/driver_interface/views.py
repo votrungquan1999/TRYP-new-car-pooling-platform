@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import Http404
 from .forms import *
 from accounts.models import *
+from accounts.views import *
 
 # Create your views here.
 
@@ -32,11 +33,11 @@ def create_car(request):
             my_user = (User.objects.get(id = user_id)).myuser
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
-<<<<<<< HEAD
+
             redirect("driver_interface:driver_view")
-=======
+
             return redirect('driver_interface:driver_view')
->>>>>>> 8cf950ed50d699cb90dac7c871b259f0d2951805
+
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
         return Http404

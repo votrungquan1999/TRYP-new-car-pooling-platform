@@ -11,5 +11,10 @@
         {{ form.as_p }}
         <input type="submit" value="OK">
     </form>
+    <form method="POST" action="/logout/">
+      {% csrf_token%}
+      <input type="Submit" value="logout"
+    </form>
+
 </body>
 </html>

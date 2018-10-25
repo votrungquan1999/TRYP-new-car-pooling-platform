@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, Http404
+from django.shortcuts import render, redirect, Http404, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .forms import infoForm
@@ -33,8 +33,8 @@ def login_view(request):
     return render(request,"accounts/login.html",{'form':form})
 
 def logout_view(request):
-    if request.method =='POST':
-        pass
+    logout(request)
+    return HttpResponse("Logout Successful")
 
 def forgot_view(request):
     return render(request,"accounts/forgot.html")
