@@ -19,7 +19,25 @@ def driver_view(request):
         return Http404
 
 def post_car_pool(request):
-    pass
+    user_id = request.session['user_id']
+    if user_id is not None:
+        form = createCarPoolForm(request.POST)
+        if form.is_valid():
+            seats = form.cleaned_data['seats']
+            destination_state = form.cleaned_data['destination_state']
+            city = form.cleaned_data['city']
+            price = form.cleaned_data['price']
+            bags = form.cleaned_data['bags']
+            date = form.cleaned_data['date']
+            time = form.cleaned_data['time']
+            my_user = (User.objects.get(id=user_id)).myuser
+            car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, city=city,
+                                        price=price, bags=bags, date=date, time=time, my_user=my_user)
+            car_pool_post.save()
+            return redirect('driver_interface:driver_view')
+        return render(request, 'driver_interface/create_car_pool.html', {'form':form})
+    else:
+        return Http404
 
 def create_car(request):
     user_id = request.session['user_id']
@@ -31,6 +49,7 @@ def create_car(request):
             model = form.cleaned_data['model']
             manufacturer = form.cleaned_data['manufacturer']
             my_user = (User.objects.get(id = user_id)).myuser
+<<<<<<< HEAD
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
 
@@ -38,6 +57,11 @@ def create_car(request):
 
             return redirect('driver_interface:driver_view')
 
+=======
+            #car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
+            #car.save()
+            return redirect('driver_interface:driver_view')
+>>>>>>> 8aaa1d03f4735adefbd23aa9452515af70881a6f
         return render(request, 'driver_interface/create_car.html', {'form': form})
     else:
         return Http404

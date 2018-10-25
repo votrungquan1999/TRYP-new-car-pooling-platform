@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post">
+    <h1>You are creating a car pool post</h1>
+    <form method = "post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="OK">
