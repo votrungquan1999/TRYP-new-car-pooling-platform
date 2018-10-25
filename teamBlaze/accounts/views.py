@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, Http404, HttpResponse
+from django.shortcuts import render, redirect, Http404, reverse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from .forms import infoForm

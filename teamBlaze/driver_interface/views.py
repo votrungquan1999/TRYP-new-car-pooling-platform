@@ -4,6 +4,7 @@ from django.shortcuts import Http404
 from .forms import *
 from accounts.models import *
 from accounts.views import *
+from .models import *
 
 # Create your views here.
 
@@ -53,22 +54,9 @@ def create_car(request):
             model = form.cleaned_data['model']
             manufacturer = form.cleaned_data['manufacturer']
             my_user = (User.objects.get(id = user_id)).myuser
-<<<<<<< HEAD
 
             car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
             car.save()
-
-            redirect("driver_interface:driver_view")
-
-            return redirect('driver_interface:driver_view')
-
-
-            #car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
-            #car.save()
-=======
-            car = Car(seats = seats, year = year, model = model, manufacturer = manufacturer, my_user = my_user)
-            car.save()
->>>>>>> 432e1a6faac43db87cece1f529e69be9e57299be
             return redirect('driver_interface:driver_view')
 
         return render(request, 'driver_interface/create_car.html', {'form': form})
