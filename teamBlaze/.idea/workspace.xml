@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9e476e3-a03f-4620-890a-c1aee226b9d5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/driver_interface/templates/driver_interface/check_car_pool.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/driver_interface/templates/driver_interface/detail_car_pool.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TRYP_HTML/pssngr_options.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/driver_interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/driver_interface/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,20 +83,24 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/driver_interface/templates/driver_interface/detail_car_pool.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="85">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+            <state relative-caret-position="804">
+              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+              <folding>
+                <element signature="e#2174#2180#0" expanded="true" />
+                <element signature="e#2191#2198#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -182,10 +176,10 @@
         <option value="$PROJECT_DIR$/driver_interface/forms.py" />
         <option value="$PROJECT_DIR$/driver_interface/models.py" />
         <option value="$PROJECT_DIR$/driver_interface/admin.py" />
-        <option value="$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html" />
         <option value="$PROJECT_DIR$/driver_interface/views.py" />
         <option value="$PROJECT_DIR$/driver_interface/templates/driver_interface/check_car_pool.html" />
         <option value="$PROJECT_DIR$/driver_interface/templates/driver_interface/detail_car_pool.html" />
+        <option value="$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html" />
       </list>
     </option>
   </component>
@@ -562,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="48" lean-forward="true" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/driver_interface/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
@@ -602,8 +589,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/driver_interface/templates/driver_interface/detail_car_pool.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/driver_interface/templates/driver_interface/driver_options.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="804">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="e#2174#2180#0" expanded="true" />
+            <element signature="e#2191#2198#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
