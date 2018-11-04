@@ -5,25 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Post's name: {{post.title}}</h1>
-    <ul>
-      <li>Date : {{post.date}}</li>
-      <li>Time : {{post.time}}</li>
-      <li>Departure State: {{post.departure_state}}</li>
-      <li>Destination State: {{post.destination_state}}</li>
-      <li>Destination City : {{post.destination_city}}</li>
-      <li>Avaliable Bag Space: {{post.bags}}</li>
-      <li>Seats Avaliable :{{post.seats}}</li>
-      <li>Price per Seat : {{post.price}}</li>
-      <li>Seats Avaliable :{{post.seats}}</li>
-    </ul>
-
-
-
+    <h1>this is the list of your car pool</h1>
+    {% csrf_token %}
+    {% for post in car_pool_posts %}
+        <li>
+            <a href="{{post.id}}/">{{post.title}}</a>
+        </li>
+    {% endfor %}
 </body>
 </html>
-
 <!--
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +28,25 @@
 
 <style>
 
+.middle h {
+    position: absolute;
+    left: 550px;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    font-size: 6rem;
+    font-weight: 300;
+    color: hotpink;
+    text-shadow: 1px 1px 3px white;
+    }
+
+    .button {
+        display: inline-block;
+        margin-left: 65px;
+        margin-right: 65px;
+    }
+    form1 {
+        display: inline-block;
+    }
+</style>
 
 </head>
 <body>
@@ -71,3 +82,5 @@
     </div>
 
 <!--Template ends-->
+
+

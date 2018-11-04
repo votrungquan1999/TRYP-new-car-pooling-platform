@@ -1,12 +1,6 @@
 from django import forms
 from bootstrap_datepicker.widgets import DatePicker
 
-class carForm(forms.Form):
-    seats = forms.IntegerField(label="Number of seats")
-    year = forms.IntegerField(label="Year that your car is manufactured")
-    model = forms.CharField(label="Model of the car", max_length=100)
-    manufacturer = forms.CharField(label="Manufacturer of the car", max_length=100)
-
 STATE_CHOICE = (("Alabama", "AL"),
                 ("Alaska", 'AK'),
                 ('Arizona', "AZ"),
@@ -68,14 +62,14 @@ STATE_CHOICE = (("Alabama", "AL"),
                 ('Virgin Islands', 'VI'),
 )
 
-class createCarPoolForm(forms.Form):
+class createNeedRideForm(forms.Form):
     title = forms.CharField(label="Name of the post")
-    seats = forms.IntegerField(label="Number of seats available")
+    seats = forms.IntegerField(label="Number of people need a ride")
     departure_state = forms.CharField(label="State of departure", widget=forms.Select(choices=STATE_CHOICE))
     departure_city = forms.CharField(label="City of departure")
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
     destination_city = forms.CharField(label="City of destination")
-    price = forms.FloatField(label="Price")
+    price = forms.FloatField(label="Price offer per person")
     bags = forms.IntegerField(label="Number of bags carry")
     date = forms.DateField()
     time = forms.TimeField()

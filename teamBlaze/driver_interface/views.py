@@ -68,7 +68,7 @@ def check_car_pool(request):
     if user_id is not None:
         user = User.objects.get(id= user_id)
         my_user = user.myuser
-        car_pool_posts = my_user.post_set.all()
+        car_pool_posts = my_user.carpoolpost_set.all()
         return render(request, 'driver_interface/check_car_pool.html', {'car_pool_posts':car_pool_posts})
 
 def detail_car_pool(request, post_id):
