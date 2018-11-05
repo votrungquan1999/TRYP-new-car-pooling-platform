@@ -5,6 +5,7 @@ from .forms import *
 from accounts.models import *
 from accounts.views import *
 from .models import *
+from driver_interface.models import CarPoolPost
 
 # Create your views here.
 def pssngr_view(request):
@@ -49,9 +50,41 @@ def check_need_ride(request):
     if user_id is not None:
         user = User.objects.get(id= user_id)
         my_user = user.myuser
-        need_ride_posts = my_user.need_ride_post_set.all()
+        #need_ride_posts = my_user.need_ride_post_set.all()
+        need_ride_posts = NeedRidePost.objects.all()
         return render(request, 'pssngr_interface/check_need_ride.html', {'car_pool_posts':need_ride_posts})
 
 def detail_need_ride(request, post_id):
     post = get_object_or_404(NeedRidePost, id = post_id)
     return render(request, 'pssngr_interface/detail_need_ride.html', {'post' : post})
+
+def find_driver(request):
+    user_id = request.session['user_id']
+    if user_id is not None:
+        form = findDriverForm(request.POST)
+        if form.is_valid():
+            user = User.objects.get(id = user_id)
+            my_user = user.myuser
+            destination_state = form.cleaned_data['destination_state']
+            destination_city = form.cleaned_data['destination_city']
+            departure_state = form.cleaned_data['departure_state']
+            departure_city = form.cleaned_data['departure_city']
+            date = form.cleaned_data['date']
+            '''need_ride_posts = NeedRidePost.objects.filter(destination_city = destination_city
+                                                          ).filter(destination_state = destination_state
+                                                          ).filter(departure_city = departure_city
+                                                          ).filter(departure_state = departure_state)
+                #.filter(date = date)'''
+            car_pool_posts = CarPoolPost.objects.all()
+            posts = []
+            for post in car_pool_posts:
+                if post.destination_state == destination_state and post.departure_state == departure_state:
+                    if post.departure_city == departure_city and post.destination_city == destination_city:
+                        if post.date == date:
+                            posts.append(post)
+            #form.save()
+            return render(request, 'pssngr_interface/find_driver.html', {'form' : form,
+                                                                         'posts' : posts})
+            #return Http404
+        else:
+            return render(request, 'pssngr_interface/find_driver.html', {'form' : form})

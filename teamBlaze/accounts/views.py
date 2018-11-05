@@ -27,6 +27,10 @@ def login_view(request):
             user = form.get_user()
             login(request,user)
             request.session['user_id'] = user.id
+            try:
+                my_user = user.myuser
+            except:
+                return redirect("accounts:userInfo")
             return redirect('../../rolechoice')
     else:
         form = AuthenticationForm()
@@ -43,7 +47,6 @@ def forgot_view(request):
 def get_user_info(request):
     form = infoForm(request.POST)
     if form.is_valid():
-
         first_name = form.cleaned_data['first_name']
         last_name = form.cleaned_data['last_name']
         email = form.cleaned_data['email']
