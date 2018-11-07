@@ -1,13 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse,Http404
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.models import User
+from django.shortcuts import render, redirect
+from django.http import Http404
 
 # Create your views here.
 def rolechoice_view(request):
-    user_id = request.session['user_id']
-    if user_id is not None:
-        user = User.objects.get(pk=user_id)
-        return render(request, 'rolechoice/rolechoice.html')
-    else:
-        raise Http404
+    try:
+        user_id = request.session['user_id']
+        if user_id is not None:
+            return render(request, 'rolechoice/rolechoice.html')
+        else:
+            raise Http404
+    except:
+        return redirect('Home:Home')
