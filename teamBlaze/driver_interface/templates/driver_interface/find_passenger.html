@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method = "post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="SEARCH">
+    </form>
+    {% for post in posts %}
+        <li>abc</li>
+        <li>
+            <a href="{% url 'pssngr_interface:detail_need_ride' post.id %}">{{post.title}} {{post.destination_state}} {{post.destination_city}} {{post.departure_state}} {{post.departure_city}}</a>
+        </li>
+    {% endfor %}
+</body>
+</html>

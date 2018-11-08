@@ -73,3 +73,13 @@ class createNeedRideForm(forms.Form):
     bags = forms.IntegerField(label="Number of bags carry")
     date = forms.DateField()
     time = forms.TimeField()
+<<<<<<< HEAD
+=======
+
+class findDriverForm(forms.Form):
+    departure_state = forms.CharField(label="State of departure", widget=forms.Select(choices=STATE_CHOICE))
+    departure_city = forms.CharField(label="City of departure")
+    destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
+    destination_city = forms.CharField(label="City of destination")
+    date = forms.DateField()
+>>>>>>> 702e7c87facaab75500c0a3fd25f2da71e294f4b
