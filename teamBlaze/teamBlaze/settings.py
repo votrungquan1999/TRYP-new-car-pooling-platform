@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'rolechoice',
     'pssngr_interface',
     'driver_interface',
-    'bootstrap_datepicker_plus',
-    'bootstrap_datepicker',
 ]
 
 MIDDLEWARE = [
