@@ -80,5 +80,7 @@ class findDriverForm(forms.Form):
     destination_city = forms.CharField(label="City of destination")
     date = forms.DateField()
 
+
 class addPassengerForm(forms.Form):
     confirm = forms.CharField(label="Please type CONFIRM here", max_length=10)
+
