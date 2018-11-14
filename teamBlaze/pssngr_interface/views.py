@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth.models import User
-from .forms import createNeedRideForm, findDriverForm
+from .forms import createNeedRideForm, findDriverForm, addPassengerForm
 from .models import NeedRidePost
 from driver_interface.models import CarPoolPost
 
@@ -51,12 +51,18 @@ def post_need_ride(request):
 def check_need_ride(request):
     try:
         user_id = request.session['user_id']
-        if user_id is not None:
-            user = User.objects.get(id= user_id)
-            my_user = user.myuser
-            need_ride_posts = my_user.need_ride_post_set.all()
-            return render(request, 'pssngr_interface/check_need_ride.html', {'car_pool_posts':need_ride_posts})
     except:
+        return redirect('Home:Home')
+    if user_id is not None:
+        user = User.objects.get(id=user_id)
+        my_user = user.myuser
+        need_ride_posts = NeedRidePost.objects.all()
+        posts = []
+        for post in posts:
+            if post.my_user == my_user:
+                posts.append(post)
+        return render(request, 'pssngr_interface/check_need_ride.html', {'car_pool_posts': posts})
+    else:
         return redirect('Home:Home')
 
 def detail_need_ride(request, post_id):
@@ -66,33 +72,54 @@ def detail_need_ride(request, post_id):
 def find_driver(request):
     try:
         user_id = request.session['user_id']
-        if user_id is not None:
-            form = findDriverForm(request.POST)
-            if form.is_valid():
-                user = User.objects.get(id = user_id)
-                my_user = user.myuser
-                destination_state = form.cleaned_data['destination_state']
-                destination_city = form.cleaned_data['destination_city']
-                departure_state = form.cleaned_data['departure_state']
-                departure_city = form.cleaned_data['departure_city']
-                date = form.cleaned_data['date']
-                '''need_ride_posts = NeedRidePost.objects.filter(destination_city = destination_city
-                                                              ).filter(destination_state = destination_state
-                                                              ).filter(departure_city = departure_city
-                                                              ).filter(departure_state = departure_state)
-                    #.filter(date = date)'''
-                car_pool_posts = CarPoolPost.objects.all()
-                posts = []
-                for post in car_pool_posts:
-                    if post.destination_state == destination_state and post.departure_state == departure_state:
-                        if post.departure_city == departure_city and post.destination_city == destination_city:
-                            if post.date == date:
-                                posts.append(post)
-                #form.save()
-                return render(request, 'pssngr_interface/find_driver.html', {'form' : form,
-                                                                             'posts' : posts})
-                #return Http404
-            else:
-                return render(request, 'pssngr_interface/find_driver.html', {'form' : form})
     except:
         return redirect('Home:Home')
+    if user_id is not None:
+        form = findDriverForm(request.POST)
+        if form.is_valid():
+            user = User.objects.get(id=user_id)
+            my_user = user.myuser
+            destination_state = form.cleaned_data['destination_state']
+            destination_city = form.cleaned_data['destination_city']
+            departure_state = form.cleaned_data['departure_state']
+            departure_city = form.cleaned_data['departure_city']
+            date = form.cleaned_data['date']
+            '''need_ride_posts = NeedRidePost.objects.filter(destination_city = destination_city
+                                                          ).filter(destination_state = destination_state
+                                                          ).filter(departure_city = departure_city
+                                                          ).filter(departure_state = departure_state)
+                #.filter(date = date)'''
+            car_pool_posts = CarPoolPost.objects.all()
+            posts = []
+            for post in car_pool_posts:
+                if post.destination_state == destination_state and post.departure_state == departure_state:
+                    if post.departure_city == departure_city and post.destination_city == destination_city:
+                        if post.date == date and post.seats > 0:
+                            posts.append(post)
+            # form.save()
+            return render(request, 'pssngr_interface/find_driver.html', {'form': form,
+                                                                         'posts': posts})
+            # return Http404
+        else:
+            return render(request, 'pssngr_interface/find_driver.html', {'form': form})
+
+def add_passenger(request, post_id):
+    try:
+        post = CarPoolPost.objects.get(id = post_id)
+        user_id = request.session['user_id']
+    except:
+        return Http404
+
+    if user_id is not None:
+        form = addPassengerForm(request.POST)
+        user = User.objects.get(id = user_id)
+        if form.is_valid():
+            post.passenger.add(user)
+            post.seats -= 1
+            post.save()
+            return redirect('pssngr_interface:passenger_view')
+        else:
+            return render(request, 'pssngr_interface/add_passenger.html', {'form' : form,
+                                                                           'post' : post})
+    else:
+        return Http404

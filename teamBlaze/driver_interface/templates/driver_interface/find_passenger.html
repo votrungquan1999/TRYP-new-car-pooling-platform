@@ -11,9 +11,8 @@
         <input type="submit" value="SEARCH">
     </form>
     {% for post in posts %}
-        <li>abc</li>
         <li>
-            <a href="{% url 'pssngr_interface:detail_need_ride' post.id %}">{{post.title}} {{post.destination_state}} {{post.destination_city}} {{post.departure_state}} {{post.departure_city}}</a>
+            <a href="{% url 'driver_interface:add_driver' post.id %}">{{post.title}} {{post.destination_state}} {{post.destination_city}} {{post.departure_state}} {{post.departure_city}}</a>
         </li>
     {% endfor %}
 </body>
