@@ -134,9 +134,14 @@ def add_driver(request, post_id):
         form = addDriverForm(request.POST)
         user = User.objects.get(id = user_id)
         if form.is_valid():
-            post.driver = user
-            post.save()
-            return redirect('driver_interface:driver_view')
+            confirm = form.cleaned_data['confirm']
+            if confirm == 'CONFIRM':
+                post.driver = user
+                post.save()
+                return redirect('driver_interface:driver_view')
+            else:
+                return render(request, 'driver_interface/add_driver.html', {'form': form,
+                                                                            'post': post})
         else:
             return render(request, 'driver_interface/add_driver.html', {'form' : form,
                                                                         'post' : post})

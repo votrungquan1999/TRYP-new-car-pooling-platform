@@ -56,12 +56,8 @@ def check_need_ride(request):
     if user_id is not None:
         user = User.objects.get(id=user_id)
         my_user = user.myuser
-        need_ride_posts = NeedRidePost.objects.all()
-        posts = []
-        for post in posts:
-            if post.my_user == my_user:
-                posts.append(post)
-        return render(request, 'pssngr_interface/check_need_ride.html', {'car_pool_posts': posts})
+        need_ride_posts = my_user.needridepost_set.all()
+        return render(request, 'pssngr_interface/check_need_ride.html', {'car_pool_posts': need_ride_posts})
     else:
         return redirect('Home:Home')
 
@@ -76,6 +72,7 @@ def find_driver(request):
         return redirect('Home:Home')
     if user_id is not None:
         form = findDriverForm(request.POST)
+        posts = []
         if form.is_valid():
             user = User.objects.get(id=user_id)
             my_user = user.myuser
@@ -90,7 +87,6 @@ def find_driver(request):
                                                           ).filter(departure_state = departure_state)
                 #.filter(date = date)'''
             car_pool_posts = CarPoolPost.objects.all()
-            posts = []
             for post in car_pool_posts:
                 if post.destination_state == destination_state and post.departure_state == departure_state:
                     if post.departure_city == departure_city and post.destination_city == destination_city:
@@ -101,7 +97,8 @@ def find_driver(request):
                                                                          'posts': posts})
             # return Http404
         else:
-            return render(request, 'pssngr_interface/find_driver.html', {'form': form})
+            return render(request, 'pssngr_interface/find_driver.html', {'form': form,
+                                                                         'posts' : posts})
 
 def add_passenger(request, post_id):
     try:
@@ -114,7 +111,7 @@ def add_passenger(request, post_id):
         form = addPassengerForm(request.POST)
         user = User.objects.get(id = user_id)
         if form.is_valid():
-            post.passenger.add(user)
+            post.passengers.add(user)
             post.seats -= 1
             post.save()
             return redirect('pssngr_interface:passenger_view')
