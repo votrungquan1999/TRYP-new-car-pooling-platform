@@ -75,8 +75,12 @@ class createNeedRideForm(forms.Form):
     time = forms.TimeField()
 
 class findDriverForm(forms.Form):
+    seats = forms.IntegerField
     departure_state = forms.CharField(label="State of departure", widget=forms.Select(choices=STATE_CHOICE))
     departure_city = forms.CharField(label="City of departure")
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
     destination_city = forms.CharField(label="City of destination")
     date = forms.DateField()
+
+class addPassengerForm(forms.Form):
+    confirm = forms.CharField(label="Please enter CONFIRM to confirm: ")

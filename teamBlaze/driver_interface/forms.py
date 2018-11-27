@@ -86,3 +86,6 @@ class findPassengerForm(forms.Form):
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
     destination_city = forms.CharField(label="City of destination")
     date = forms.DateField()
+
+class addDriverForm(forms.Form):
+    confirm = forms.CharField(label="Please enter CONFIRM to confirm: ")

@@ -61,7 +61,7 @@ def get_user_info(request):
                     my_user.save()
                 else:
                     raise Http404
-                return redirect('accounts:login')
+                return redirect('Home:Home')
             return render(request, 'accounts/get_info.html', {'form' : form})
         else:
             return Http404

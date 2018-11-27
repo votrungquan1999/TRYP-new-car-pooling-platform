@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth.models import User
-from .forms import createCarPoolForm, carForm, findPassengerForm
+from .forms import createCarPoolForm, carForm, findPassengerForm, addDriverForm
 from .models import CarPoolPost, Car
 from pssngr_interface.models import NeedRidePost
 
@@ -110,7 +110,7 @@ def find_passenger(request):
                 for post in need_ride_posts:
                     if post.destination_state == destination_state and post.departure_state == departure_state:
                         if post.departure_city == departure_city and post.destination_city == destination_city:
-                            if post.date == date:
+                            if post.date == date and post.driver.username == 'test123':
                                 posts.append(post)
                 #form.save()
                 return render(request, 'driver_interface/find_passenger.html', {'form' : form,
@@ -118,5 +118,29 @@ def find_passenger(request):
                 #return Http404
             else:
                 return render(request, 'driver_interface/find_passenger.html', {'form' : form})
+    except:
+        return redirect('Home:Home')
+
+def add_driver_to_post(request, post_id):
+    try:
+        post = NeedRidePost.objects.get(id = post_id)
+        user_id = request.session['user_id']
+        if user_id is not None:
+            user = User.objects.get(id = user_id)
+            form = addDriverForm(request.POST)
+            if form.is_valid():
+                confirm = form.cleaned_data['confirm']
+                if confirm == 'CONFIRM':
+                    post.driver = user
+                    post.save()
+                    return redirect('driver_interface:driver_view')
+                else:
+                    return render(request, 'driver_interface/add_driver.html', {'form' : form,
+                                                                                'post' : post})
+            else:
+                return render(request, 'driver_interface/add_driver.html', {'form' : form,
+                                                                            'post' : post})
+        else:
+            return Http404
     except:
         return redirect('Home:Home')
