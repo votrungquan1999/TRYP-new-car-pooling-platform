@@ -9,5 +9,9 @@ urlpatterns = [
     path('check_car_pool/<int:post_id>/', views.detail_car_pool, name = 'detail_car_pool'),
     path('check_car_pool/', views.check_car_pool, name = 'check_car_pool'),
     path('find_passenger/', views.find_passenger, name = 'find_passenger'),
+<<<<<<< HEAD
     path('add_driver/<int:post_id>/', views.add_driver_to_post, name = 'add_driver')
+=======
+    path('add_driver/<int:post_id>/', views.add_driver, name = 'add_driver')
+>>>>>>> 3021a4c382a24e281ddf0acdf9a0d24073cfae80
 ]

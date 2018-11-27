@@ -1,5 +1,4 @@
 from django import forms
-from bootstrap_datepicker.widgets import DatePicker
 
 STATE_CHOICE = (("Alabama", "AL"),
                 ("Alaska", 'AK'),
@@ -82,5 +81,12 @@ class findDriverForm(forms.Form):
     destination_city = forms.CharField(label="City of destination")
     date = forms.DateField()
 
+<<<<<<< HEAD
 class addPassengerForm(forms.Form):
     confirm = forms.CharField(label="Please enter CONFIRM to confirm: ")
+=======
+
+class addPassengerForm(forms.Form):
+    confirm = forms.CharField(label="Please type CONFIRM here", max_length=10)
+
+>>>>>>> 3021a4c382a24e281ddf0acdf9a0d24073cfae80

@@ -90,6 +90,7 @@ def detail_car_pool(request, post_id):
 def find_passenger(request):
     try:
         user_id = request.session['user_id']
+<<<<<<< HEAD
         if user_id is not None:
             form = findPassengerForm(request.POST)
             if form.is_valid():
@@ -144,3 +145,62 @@ def add_driver_to_post(request, post_id):
             return Http404
     except:
         return redirect('Home:Home')
+=======
+    except:
+        return redirect('Home:Home')
+    if user_id is not None:
+        form = findPassengerForm(request.POST)
+        if form.is_valid():
+            user = User.objects.get(id=user_id)
+            my_user = user.myuser
+            destination_state = form.cleaned_data['destination_state']
+            destination_city = form.cleaned_data['destination_city']
+            departure_state = form.cleaned_data['departure_state']
+            departure_city = form.cleaned_data['departure_city']
+            date = form.cleaned_data['date']
+            '''need_ride_posts = NeedRidePost.objects.filter(destination_city = destination_city
+                                                          ).filter(destination_state = destination_state
+                                                          ).filter(departure_city = departure_city
+                                                          ).filter(departure_state = departure_state)
+                #.filter(date = date)'''
+            need_ride_posts = NeedRidePost.objects.all()
+            posts = []
+            for post in need_ride_posts:
+                if post.destination_state == destination_state and post.departure_state == departure_state:
+                    if post.departure_city == departure_city and post.destination_city == destination_city:
+                        if post.date == date and post.driver.username == 'test123':
+                            posts.append(post)
+            # form.save()
+            return render(request, 'driver_interface/find_passenger.html', {'form': form,
+                                                                            'posts': posts})
+            # return Http404
+        else:
+            return render(request, 'driver_interface/find_passenger.html', {'form': form})
+    else:
+        return Http404
+
+def add_driver(request, post_id):
+    try:
+        post = NeedRidePost.objects.get(id = post_id)
+        user_id = request.session['user_id']
+    except:
+        return Http404
+
+    if user_id is not None:
+        form = addDriverForm(request.POST)
+        user = User.objects.get(id = user_id)
+        if form.is_valid():
+            confirm = form.cleaned_data['confirm']
+            if confirm == 'CONFIRM':
+                post.driver = user
+                post.save()
+                return redirect('driver_interface:driver_view')
+            else:
+                return render(request, 'driver_interface/add_driver.html', {'form': form,
+                                                                            'post': post})
+        else:
+            return render(request, 'driver_interface/add_driver.html', {'form' : form,
+                                                                        'post' : post})
+    else:
+        return Http404
+>>>>>>> 3021a4c382a24e281ddf0acdf9a0d24073cfae80
