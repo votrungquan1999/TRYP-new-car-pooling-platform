@@ -1,17 +1,124 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>About Us</title>
-  </head>
-  <body>
-    <h1>Will</h1>
-    <p>Will is an excellent coder</p>
-    <h2>Jake</h2>
-    <p>Jake is a great buisness man</p>
-    <h3>Zach Moore</h3>
-    <p>Zach is a great all around designer</p>
 
-    <p></p>
-  </body>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>TRYP</title>
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-theme.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<style>
+    .Zach {
+        font-family: "Comic Sans MS", monospace;
+        font-size: 4rem;
+        font-weight: bold;
+        color: orangered;
+        text-shadow: 1px 1px 3px white;
+    }
+    
+    .Will {
+        font-family: "Comic Sans MS", monospace;
+        font-size: 4rem;
+        font-weight: bold;
+        color: navy;
+        text-shadow: 1px 1px 3px white;
+    }
+    
+    .Jake {
+         font-family: "Comic Sans MS", monospace;
+        font-size: 4rem;
+        font-weight: bold;
+        color: fuchsia;
+        text-shadow: 1px 1px 3px white;
+    }
+
+    .button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    font-weight: 100;
+    font-family: Courier, monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+    .button2:hover {;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    
+</style>
+
+
+
+</head>
+<body>
+
+
+<!--Template starts-->
+    
+<div class="container">
+    
+    <!--App logo-->
+    <div class ="logo">
+        <img src="/static/transBG.png">
+        <h1>T.R.Y.P</h1>
+        <p>Are you tryppin'? </p>
+    </div>
+    
+<!--Template ends-->
+
+<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
+    <div class ="middle">
+    <br>
+    <br>
+    <br>
+    <br>
+        <div class="Zach">
+    <h>Special thanks to Zach for being our database expert</h></div>
+    <br>
+    <br>
+        <div class ="Will">
+    <h>Will is so good at programming he got this site running no sweat</h></div>
+    <br>
+    <br>
+        <div class="Jake">
+    <h>Jake somewhat helped with his little bit of decoration</h></div>
+    <br>
+    </div>
+<!--------------------------------YOUR CODE ENDS HERE-------------------------------->
+    
+<!--Template starts-->
+    
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+        <form action="{%url 'Home:Home' %}">
+        <button class = "button2" >Go back</button>
+        </form>
+    </div>
+    
+<!--Template ends-->
+</div>
+
+</body>
 </html>

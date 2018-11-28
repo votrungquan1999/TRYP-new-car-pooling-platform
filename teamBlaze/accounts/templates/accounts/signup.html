@@ -1,22 +1,4 @@
-<!--<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Sign Up Page!</title>
-  </head>
-  <body>
-    <h1>This is the Sign up Page </h1>
-    <form class="site-form" action="/accounts/signup/" method="post">
-      {% csrf_token %}
-      {{form}}
-      <input type="submit" name="" value="Sign Up">
-
-    </form>
-
-  </body>
-</html>
-
--->
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -141,7 +123,7 @@ input:invalid {
     <br>
     <br>
      <form class="site-form" action="/accounts/signup/" method="post">
-      {% csrf_token %}
+      {% csrf_token %}  
     <label>Username:</label> {{form.username}}
     <br>
     <br>
