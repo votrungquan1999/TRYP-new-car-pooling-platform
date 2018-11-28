@@ -79,8 +79,4 @@ class Post(models.Model):
 
 class CarPoolPost(Post):
     my_user = models.ForeignKey(MyUser, on_delete=models.CASCADE, default=None)
-<<<<<<< HEAD
-    passenger = models.ManyToManyField(User)
-=======
     passengers = models.ManyToManyField(User)
->>>>>>> 3021a4c382a24e281ddf0acdf9a0d24073cfae80

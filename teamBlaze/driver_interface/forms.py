@@ -87,8 +87,4 @@ class findPassengerForm(forms.Form):
     date = forms.DateField()
 
 class addDriverForm(forms.Form):
-<<<<<<< HEAD
-    confirm = forms.CharField(label="Please enter CONFIRM to confirm: ")
-=======
     confirm = forms.CharField(label="Please type CONFIRM here", max_length=10)
->>>>>>> 3021a4c382a24e281ddf0acdf9a0d24073cfae80
