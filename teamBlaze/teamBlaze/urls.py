@@ -29,7 +29,8 @@ urlpatterns = [
     path('', include('Home.urls')),
     path('passenger/', include('pssngr_interface.urls')),
     path('driver/', include('driver_interface.urls')),
-    ]
+    path('test_api/', include('test_api.urls')),
+]
 
 
 urlpatterns += staticfiles_urlpatterns()
