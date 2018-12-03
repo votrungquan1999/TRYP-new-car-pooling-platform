@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rolechoice',
     'pssngr_interface',
     'driver_interface',
+    'test_api',
 ]
 
 MIDDLEWARE = [
