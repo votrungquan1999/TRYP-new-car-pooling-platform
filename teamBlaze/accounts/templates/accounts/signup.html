@@ -92,8 +92,11 @@ input {
     float: left;
 }
 
-input:invalid {
-    background-color:palevioletred;
+
+        
+input[type=text]:focus, input[type=password]:focus {
+    background-color: aquamarine;
+    outline: none;
 }
         
 </style>
@@ -102,8 +105,8 @@ input:invalid {
 </head>
 <body>
 
-
-<!--Template starts-->
+    
+    <!--Template starts-->
     
 <div class="container">
     
@@ -142,7 +145,7 @@ input:invalid {
     </div>
 
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
-    
+       
 <!--Template starts-->
     
     <!--About section-->
@@ -154,7 +157,6 @@ input:invalid {
     </div>
     
 <!--Template ends-->
-</div>
-
+    </div>
 </body>
 </html>
