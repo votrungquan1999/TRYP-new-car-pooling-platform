@@ -17,7 +17,7 @@ def signup_view(request):
             return redirect('accounts:userInfo')
     else:
         form = UserCreationForm()
-    return render(request, 'accounts/signup1.html', {'form' : form })
+    return render(request, 'accounts/signup.html', {'form' : form })
 
 
 def login_view(request):

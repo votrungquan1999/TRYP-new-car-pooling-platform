@@ -92,8 +92,9 @@ input {
     float: left;
 }
 
-input:invalid {
-    background-color:palevioletred;
+input[type=text]:focus, input[type=password]:focus {
+    background-color: aquamarine;
+    outline: none;
 }
         
 </style>
@@ -122,7 +123,6 @@ input:invalid {
     <br>
     <br>
     <br>
-
      <form class="site-form" method="post">
       {% csrf_token %}
     <label>First Name:</label> {{form.first_name}}
