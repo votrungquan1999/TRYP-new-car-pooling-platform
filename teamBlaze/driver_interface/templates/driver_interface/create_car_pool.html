@@ -7,23 +7,35 @@
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/bootstrap-theme.css">
     <link rel="stylesheet" href="/static/style.css">
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>    
-    <script src="js/bootstrap.min.js"></script>
 <style>
 
-.middle {
-    position: relative;
-    margin: 0;
+.main {
+    width:1300px;
+    margin-left: 450px;    
+}
+
+.trip-info {
+    width: 600px;
+    float: left;
+    font-size: 2.5rem;
     font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    }
+
+.user-info {
+    width: 700px;
+    float: left;
+    font-size: 2.5rem;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
+    }
+
+.clear {
+    clear: both;
     }
 
     
 label {
     display: inline-block;
     float: left;
-    clear: left;
-    width: 800px;
     text-align: right;
 }
 
@@ -31,6 +43,7 @@ input {
     border-radius: 15px;
     display: inline-block;
     float: left;
+    width: auto;
 }
 
         
@@ -38,7 +51,64 @@ input[type=text]:focus, input[type=password]:focus {
     background-color: aquamarine;
     outline: none;
 }
+
+.button1 {
+    /*Button*/
+    border-radius: 25px;
+    background-color: #FE5531;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 200px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+    color: white;
     
+    /*Text*/
+    font-family: "Courier", monospace;
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    font-family: "Courier", monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.button2:hover {;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
     
 </style>
     
@@ -60,40 +130,56 @@ input[type=text]:focus, input[type=password]:focus {
 <!--Template ends-->
 
 <!--------------------------------YOUR CODE STARTS HERE-------------------------------->
-    <div class="middle">
     <form class="site-form" action="/.../" method="post">
-      {% csrf_token %}
-    <label>Title:</label> {{form.title}}
+    {% csrf_token %}
+    <div class="main">
+    <div class="trip-info">
     <br>
     <br>
-    <label>Seats:</label> {{form.seats}}
+    <label>Title: </label> {{form.title}}
     <br>
     <br>
-    <label>Departure State:</label> {{form.departure_state}}
+    <label>Departure State: </label> {{form.departure_state}}
     <br>
     <br>
-    <label>Destination State:</label> {{form.destination_state}}
+    <label>Destination State: </label> {{form.destination_state}}
     <br>
     <br>
-    <label>Departure City:</label> {{form.departure_city}}
+    <label>Departure City: </label> {{form.departure_city}}
     <br>
     <br>
-    <label>Destination City:</label> {{form.destination_city}}
+    <label>Destination City: </label> {{form.destination_city}}
+    </div>
+    <div class ="user-info">
     <br>
     <br>
-    <label>Price:</label> {{form.price}}
+    <label>Seats: </label> {{form.seats}}
     <br>
     <br>
-    <label>Bags:</label> {{form.bags}}
+    <label>Price: </label> {{form.price}}
     <br>
     <br>
-    <label>Date:</label> {{form.date}}
+    <label>Bags: </label> {{form.bags}}
     <br>
     <br>
-    <label>Time:</label> {{form.time}}
+    <label>Date: </label> {{form.date}}
     <br>
     <br>
+    <label>Time: </label> {{form.time}}
+    <br>
+    <br>
+    <div class="clear"></div>
+    </div>
+    </div>
     </form>
+    
+    <div class="buttons">
+    <button class = "button1" type="submit" >Submit</button>
+    <br>
+    <form action="{% url 'driver_interface:driver_view' %}">
+    <button class = "button2" action="{% url 'driver_interface:driver_view' %}">Go back</button>
+    </form>
+    </div>
     </div>
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
 
