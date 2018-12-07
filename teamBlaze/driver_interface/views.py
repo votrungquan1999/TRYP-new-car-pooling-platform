@@ -23,6 +23,7 @@ def driver_view(request):
 def post_car_pool(request):
     try:
         user_id = request.session['user_id']
+
         if user_id is not None:
             form = createCarPoolForm(request.POST)
             if form.is_valid():
