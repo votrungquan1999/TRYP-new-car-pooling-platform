@@ -44,7 +44,7 @@ def post_need_ride(request):
                                         price=price, bags=bags, date=date, time=time, my_user=my_user, departure_city = departure_city,
                                         departure_state = departure_state, title = title)
             need_ride_post.save()
-            return redirect('pssngr_interface:pssngr_view')
+            return redirect('pssngr_interface:passenger_view')
         return render(request, 'pssngr_interface/create_need_ride.html', {'form':form})
     else:
         return Http404
