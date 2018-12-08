@@ -52,7 +52,7 @@
     width: 100%;
     font-family: 'OogieBoogie', "Palatino Linotype", monospace;
     font-size: 4rem;
-    font-weight: bold;
+    font-weight: 100;
     color: lime;
 }
 
@@ -87,7 +87,7 @@ div.container {
 }
 
 div.logo {
-    overflow: auto;
+    overflow: visible;
     display: inline-block;
     position: relative;
     width: 100%;
@@ -95,14 +95,14 @@ div.logo {
 }
 
 div.middle {
-    overflow: auto;
+    overflow: visible;
     display: inline-block;
     position: relative;
     width: 100%;
 }
 
 div.about {
-    overflow: auto;
+    overflow: visible;
     display: inline-block;
     position: absolute;
     width: 100%;

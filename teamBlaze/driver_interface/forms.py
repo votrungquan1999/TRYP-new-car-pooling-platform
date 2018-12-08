@@ -76,7 +76,7 @@ class createCarPoolForm(forms.Form):
     destination_city = forms.CharField(label="City of destination")
     price = forms.FloatField(label="Price")
     bags = forms.IntegerField(label="Number of bags carry")
-    date = forms.DateField()
+    date = forms.DateField(widget=forms.SelectDateWidget())
     time = forms.TimeField()
 
 class findPassengerForm(forms.Form):

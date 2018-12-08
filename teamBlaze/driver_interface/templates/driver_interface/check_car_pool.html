@@ -54,12 +54,31 @@
     div.table-responsive {
         margin-left: auto;
         margin-right: auto;
+        margin-bottom: 20px;
         vertical-align: middle;
-        width: 50%;   
+        width: 50%;
+        height: 500px;
         background-color: white;
         border-radius: 20px;
         box-shadow: 5px 5px 10px;
     }
+    
+    tbody {
+        display: block;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    tbody {
+    display:block;
+    max-height: 320px;
+    overflow-y: scroll;
+}
+    thead, tbody tr {
+    display:table;
+    width:100%;
+}
+    
     .table tr {
         font-family: "Palatino Linotype", monospace;
     }
@@ -121,6 +140,8 @@
 }
     
 </style>
+
+
     
 </head>
 <body>
@@ -152,28 +173,25 @@
 <div class="middle">
 <div class="table-responsive">
   <h1>Your personal list of carpools</h1>            
-  <table class="table table-bordered table-hover">
+  <table class="table table-hover">
     {% csrf_token %}
     <thead>
       <tr>
-        <th>#</th>
+        <th style="width:200px">#</th>
         <th>Post Title</th>
       </tr>
     </thead>
     <tbody>
     {% for post in car_pool_posts %}
       <tr>
-        <td></td>
+        <td style="width:200px"></td>
         <td><a href="{{post.id}}/">{{post.title}}</a></td>
       </tr>
     {% endfor %}
     </tbody>
   </table>
 </div>
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <div class = "someButton">
     <form action="{% url 'driver_interface:driver_view' %}">
     <button class = "button2" action="{% url 'driver_interface:driver_view' %}">Go back</button>
