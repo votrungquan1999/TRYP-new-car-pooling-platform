@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="/static/style.css">
 
 <style>
+    
+/*Testing Navigation bar starts here*/
+
+.topnav {
+  overflow: auto;
+  background-color: (153, 217, 234);
+}
+
+.topnav a {
+  position: relative;
+  float: left;
+  padding: 14px 16px;
+    
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Berlin Sans FB", monospace;
+  font-size: 2rem;
+  font-weight: 100;
+  border-radius: 20px;
+}
+
+.topnav a:hover {
+  background-color: slateblue;
+  color: white;
+}
+
+
+/*Testing Navigation bar ends here*/
 
 .middle h {
     position: absolute;
@@ -58,6 +87,33 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    font-family: "Courier", monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.button2:hover {;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
   
 </style>
 
@@ -68,6 +124,13 @@
 <!--Template starts-->
 
 <div class="container">
+    
+    <div class="topnav">
+        <a href="{% url 'Home:Home' %}">Home</a>
+        <a href="{% url 'About:about_info' %}">About</a>
+        <a href="">Feedback</a>
+        <a href="/accounts/logout/">Log out</a>
+    </div>
 
     <!--App logo-->
     <div class ="logo">
@@ -83,7 +146,6 @@
     <div class ="middle">
     <br>
     <br>
-    <br>
     <h>What would you like to do?</h>
     <br>
     <br>
@@ -92,10 +154,10 @@
     <!--<a href ="{% url 'driver_interface:create_car_pool' %}">
         <button class="button"><span>Post Carpool</span></button>
     </a>-->
-    <form style="display: inline;" action="/driver/create_car_pool/">
+    <form style="display: inline;" action="{% url 'driver_interface:create_car_pool' %}">
         <button class="button"><span>Post Car Pool</span></button>
     </form>
-    <form style="display: inline;" action ="/driver/check_car_pool/">
+    <form style="display: inline;" action ="{% url 'driver_interface:check_car_pool' %}">
         <button class="button"><span>Check Carpool</span></button>
     </form>
     <form style="display: inline;" action ="{% url 'driver_interface:find_passenger' %}">
@@ -104,11 +166,13 @@
     <br>
     <br>
     <br>
-    <form action="/accounts/logout/">
-        <button class="button1">Logout</button>
+    <br>
+    <div class = "someButton">
+    <form action="{% url 'roleChoice:roleChoice' %}">
+    <button class = "button2">Go back</button>
     </form>
     </div>
-
+    </div>
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
 
 <!--Template starts-->
@@ -116,9 +180,6 @@
     <!--About section-->
     <div class="about">
     <h1>&copy; Team Blaze&trade; </h1>
-        <form action ="{% url 'About:about_info' %}">
-        <button class = "buttonn" >About us</button>
-        </form>
     </div>
 
 <!--Template ends-->
@@ -126,6 +187,5 @@
 
 
 </div>
-
 </body>
 </html>

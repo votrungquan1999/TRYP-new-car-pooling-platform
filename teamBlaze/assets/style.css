@@ -8,6 +8,8 @@
     font-style: normal;
 }
 
+
+
 /*Template starts here*/
 .logo img {
     float: left;
@@ -48,7 +50,7 @@
 .about h1 {
     text-align: center;
     width: 100%;
-    font-family: 'Courier', monospace;
+    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
     font-size: 4rem;
     font-weight: bold;
     color: lime;
@@ -73,6 +75,7 @@ div {
 
 
 div.container {
+    overflow: auto;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -84,6 +87,7 @@ div.container {
 }
 
 div.logo {
+    overflow: auto;
     display: inline-block;
     position: relative;
     width: 100%;
@@ -91,12 +95,14 @@ div.logo {
 }
 
 div.middle {
+    overflow: auto;
     display: inline-block;
     position: relative;
     width: 100%;
 }
 
 div.about {
+    overflow: auto;
     display: inline-block;
     position: absolute;
     width: 100%;

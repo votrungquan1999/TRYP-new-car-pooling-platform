@@ -13,6 +13,35 @@
     <script src="js/bootstrap.min.js"></script>
 
     <style>
+        
+/*Testing Navigation bar starts here*/
+
+.topnav {
+  overflow: auto;
+  background-color: (153, 217, 234);
+}
+
+.topnav a {
+  position: relative;
+  float: left;
+  padding: 14px 16px;
+    
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Berlin Sans FB", monospace;
+  font-size: 2rem;
+  font-weight: 100;
+  border-radius: 20px;
+}
+
+.topnav a:hover {
+  background-color: slateblue;
+  color: white;
+}
+
+
+/*Testing Navigation bar ends here*/
 
 .middle {
     text-align: center;
@@ -107,6 +136,13 @@ input[type=text]:focus, input[type=password]:focus {
     <!--Template starts-->
     
 <div class="container">
+    
+    <div class="topnav">
+        <a href="{% url 'Home:Home' %}">Home</a>
+        <a href="{% url 'About:about_info' %}">About</a>
+        <a href="">Feedback</a>
+        <a href="/accounts/logout/">Log out</a>
+    </div>
     
     <!--App logo-->
     <div class ="logo">
