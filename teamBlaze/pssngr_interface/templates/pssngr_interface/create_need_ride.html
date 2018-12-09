@@ -42,6 +42,17 @@
     width:1300px;
     margin-left: 450px;    
 }
+    
+.title {
+        width: 400px;
+        position: absolute;
+        vertical-align: middle;
+        margin-left: 300px;
+        font-size: 2.5rem;
+        font-weight: 50;
+        font-family: "Berlin Sans FB", "Palatino Linotype", monospace;
+}
+
 
 .trip-info {
         width: 600px;
@@ -171,37 +182,35 @@ input[type=text]:focus, input[type=password]:focus {
     <form class="site-form" method="post">
     {% csrf_token %}
     <div class="main">
+    <div class="title"><label>Title: </label> {{form.title}}</div>
     <div class="trip-info">
-    <br>
-    <label>Title: </label> {{form.title}}
     <br>
     <br>
     <label>Departure State: </label> {{form.departure_state}}
     <br>
     <br>
-    <label>Destination State: </label> {{form.destination_state}}
-    <br>
-    <br>
     <label>Departure City: </label> {{form.departure_city}}
-    <br>
-    <br>
-    <label>Destination City: </label> {{form.destination_city}}
-    </div>
-    <div class ="user-info">
-    <br>
-    <label>Number of Passengers: </label> {{form.seats}}
-    <br>
-    <br>
-    <label>Offered price per person: </label> {{form.price}}
-    <br>
-    <br>
-    <label>Bags: </label> {{form.bags}}
     <br>
     <br>
     <label>Date: </label> {{form.date}}
     <br>
     <br>
+    <label>Number of passengers: </label> {{form.seats}}
+
+    </div>
+    <div class ="user-info">
+    <br>
+    <br>
+    <label>Destination State: </label> {{form.destination_state}}
+    <br>
+    <br>
+    <label>Destination City: </label> {{form.destination_city}}
+    <br>
+    <br>
     <label>Time: </label> <input title="form.time" type="time" name="time">
+    <br>
+    <br>
+    <label>Bags: </label> {{form.bags}}
     <br>
     <br>
     <div class="clear"></div>
