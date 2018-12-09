@@ -77,13 +77,20 @@ def get_uber_price(source, destination):
         time = time / 60
 
         #response = client.get_products(37.77, -122.41)
-        response = client.get_products(get_coordinate(source))
-        products = response.json.get('products')[6]
+        latitude, longitude = get_coordinate(source)
+        response = client.get_products(latitude, longitude)
+        try:
+            products = response.json.get('products')[6]
+        except:
+            response = client.get_products(37.77, -122.41)
+            products = response.json.get('products')[6]
 
         price_detail = products['price_details']
 
         cost_per_minute = price_detail['cost_per_minute']
         cost_per_distance = price_detail['cost_per_distance']
+        # return str(cost_per_distance) + " " + str(cost_per_minute)\
+        # return products
 
         distance_unit = price_detail['distance_unit']
         if distance_unit == 'mile':
@@ -105,85 +112,3 @@ def test_uber_api(request):
 
     return HttpResponse('{0}'.format(get_uber_price()))
 
-    # return HttpResponse(str(begin_latitude) + ' ' + str(begin_longitude))
-
-
-    # {'destination_addresses': ['Haridwar, Uttarakhand, India'],
-    #  'origin_addresses': ['Dehradun, Uttarakhand, India'],
-    #  'rows':[{'elements':
-    #               [{'distance': {'text': '56.3 km', 'value': 56288},
-    #                 'duration': {'text': '1 hour 40 mins', 'value': 5993},
-    #                 'status': 'OK'}]}],
-    #  'status': 'OK'}
-
-    # [{'upfront_fare_enabled': True, 'capacity': 4, 'product_id': '57c0ff4e-1493-4ef9-a4df-6b961525cf92',
-    #   'price_details': {'service_fees': [{'fee': 2.45, 'name': 'Booking fee'}], 'cost_per_minute': 0.5,
-    #                     'distance_unit': 'mile', 'minimum': 11.45, 'cost_per_distance': 2.81, 'base': 5.0,
-    #                     'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-uberselect.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'Select', 'display_name': 'Select', 'product_group': 'uberx',
-    #   'description': 'A STEP ABOVE THE EVERY DAY'},
-    #  {'upfront_fare_enabled': True, 'capacity': 6, 'product_id': '821415d8-3bd5-4e27-9604-194e4359a449',
-    #   'price_details': {'service_fees': [{'fee': 2.45, 'name': 'Booking fee'}], 'cost_per_minute': 0.42,
-    #                     'distance_unit': 'mile', 'minimum': 9.45, 'cost_per_distance': 1.72, 'base': 3.0,
-    #                     'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-uberxl2.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'UberXL', 'display_name': 'UberXL', 'product_group': 'uberxl',
-    #   'description': 'LOW-COST RIDES FOR LARGE GROUPS'},
-    #  {'upfront_fare_enabled': True, 'capacity': 4, 'product_id': 'd4abaae7-f4d6-4152-91cc-77523e8165a4',
-    #   'price_details': {'service_fees': [], 'cost_per_minute': 0.65, 'distance_unit': 'mile', 'minimum': 15.0,
-    #                     'cost_per_distance': 3.81, 'base': 8.0, 'cancellation_fee': 10.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-black.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'Black', 'display_name': 'Black', 'product_group': 'uberblack',
-    #   'description': 'THE ORIGINAL UBER'},
-    #  {'upfront_fare_enabled': True, 'capacity': 6, 'product_id': '8920cb5e-51a4-4fa4-acdf-dd86c5e18ae0',
-    #   'price_details': {'service_fees': [], 'cost_per_minute': 0.9, 'distance_unit': 'mile', 'minimum': 25.0,
-    #                     'cost_per_distance': 3.81, 'base': 15.0, 'cancellation_fee': 10.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-suv.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'Black SUV', 'display_name': 'Black SUV', 'product_group': 'suv',
-    #   'description': 'ROOM FOR EVERYONE'},
-    #  {'upfront_fare_enabled': True, 'capacity': 4, 'product_id': 'ff5ed8fe-6585-4803-be13-3ca541235de3',
-    #   'price_details': {'service_fees': [{'fee': 2.2, 'name': 'Booking fee'}], 'cost_per_minute': 0.39,
-    #                     'distance_unit': 'mile', 'minimum': 7.2, 'cost_per_distance': 0.91, 'base': 2.2,
-    #                     'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-uberx.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'Assist', 'display_name': 'Assist', 'product_group': 'uberx',
-    #   'description': 'uberX with extra assistance'},
-    #  {'upfront_fare_enabled': True, 'capacity': 4, 'product_id': '2832a1f5-cfc0-48bb-ab76-7ea7a62060e7',
-    #   'price_details': {'service_fees': [{'fee': 2.2, 'name': 'Booking fee'}], 'cost_per_minute': 0.39,
-    #                     'distance_unit': 'mile', 'minimum': 7.2, 'cost_per_distance': 0.91, 'base': 2.2,
-    #                     'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-wheelchair.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'WAV', 'display_name': 'WAV', 'product_group': 'uberx',
-    #   'description': 'WHEELCHAIR ACCESSIBLE VEHICLES'},
-    #  {'upfront_fare_enabled': True, 'capacity': 2, 'product_id': '26546650-e557-4a7b-86e7-6a3942445247',
-    #   'price_details': {'service_fees': [{'fee': 2.2, 'name': 'Booking fee'}], 'cost_per_minute': 0.31,
-    #                     'distance_unit': 'mile', 'minimum': 7.65, 'cost_per_distance': 0.81, 'base': 2.2,
-    #                     'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-uberx.png', 'cash_enabled': False,
-    #   'shared': True, 'short_description': 'Pool', 'display_name': 'UberPool', 'product_group': 'rideshare',
-    #   'description': 'Shared rides, door to door'},
-    #  {'upfront_fare_enabled': True, 'capacity': 4, 'product_id': 'a1111c8c-c720-46c3-8534-2fcdd730040d',
-    #   'price_details': {'service_fees': [{'fee': 2.2, 'name': 'Booking fee'}], 'cost_per_minute': 0.39,
-    #                     'distance_unit': 'mile', 'minimum': 7.2, 'cost_per_distance': 0.91, 'base': 2.2,
-    #                     'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-uberx.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'UberX', 'display_name': 'UberX', 'product_group': 'uberx',
-    #   'description': 'THE LOW-COST UBER'},
-    #  {'upfront_fare_enabled': False, 'capacity': 4, 'product_id': '3ab64887-4842-4c8e-9780-ccecd3a0391d',
-    #   'price_details': {'service_fees': [], 'cost_per_minute': 0.55, 'distance_unit': 'mile', 'minimum': 3.5,
-    #                     'cost_per_distance': 2.75, 'base': 3.5, 'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #   'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-taxi.png', 'cash_enabled': False,
-    #   'shared': False, 'short_description': 'Taxi', 'display_name': 'Taxi', 'product_group': 'taxi',
-    #   'description': 'TAXI WITHOUT THE HASSLE'}]
-
-
-
-
-    # {'upfront_fare_enabled': True, 'capacity': 2, 'product_id': '26546650-e557-4a7b-86e7-6a3942445247',
-    #  'price_details': {'service_fees': [{'fee': 2.2, 'name': 'Booking fee'}], 'cost_per_minute': 0.31,
-    #                    'distance_unit': 'mile', 'minimum': 7.65, 'cost_per_distance': 0.81, 'base': 2.2,
-    #                    'cancellation_fee': 5.0, 'currency_code': 'USD'},
-    #  'image': 'https://d1a3f4spazzrp4.cloudfront.net/car-types/mono/mono-uberx.png', 'cash_enabled': False,
-    #  'shared': True, 'short_description': 'Pool', 'display_name': 'UberPool', 'product_group': 'rideshare',
-    #  'description': 'Shared rides, door to door'}
