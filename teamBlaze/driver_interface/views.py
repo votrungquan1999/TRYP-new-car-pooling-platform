@@ -72,7 +72,7 @@ def post_car_pool(request):
             user = User.objects.get(id=user_id)
             my_user = user.myuser
             car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state,
-                                        destination_city=destination_city, price = price,
+                                        destination_city=destination_city, price = 0,
                                         bags=bags, date=date, time=time, my_user=my_user, departure_city=departure_city,
                                         departure_state=departure_state, title=title)
             car_pool_post.save()
