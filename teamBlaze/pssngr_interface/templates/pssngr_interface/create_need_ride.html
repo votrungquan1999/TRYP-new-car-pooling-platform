@@ -182,8 +182,9 @@ input[type=text]:focus, input[type=password]:focus {
     <form class="site-form" method="post">
     {% csrf_token %}
     <div class="main">
-    <div class="title"><label>Title: </label> {{form.title}}</div>
+
     <div class="trip-info">
+    <label>Title: </label> {{form.title}}
     <br>
     <br>
     <label>Departure State: </label> {{form.departure_state}}
@@ -195,10 +196,11 @@ input[type=text]:focus, input[type=password]:focus {
     <label>Date: </label> {{form.date}}
     <br>
     <br>
-    <label>Number of passengers: </label> {{form.seats}}
+    <label>Bags: </label> {{form.bags}}
 
     </div>
     <div class ="user-info">
+    <label>Number of passengers: </label> {{form.seats}}
     <br>
     <br>
     <label>Destination State: </label> {{form.destination_state}}
@@ -210,7 +212,7 @@ input[type=text]:focus, input[type=password]:focus {
     <label>Time: </label> <input title="form.time" type="time" name="time">
     <br>
     <br>
-    <label>Bags: </label> {{form.bags}}
+    <label>Offered Price per passenger: </label> {{form.price}}
     <br>
     <br>
     <div class="clear"></div>
