@@ -65,7 +65,6 @@ def post_car_pool(request):
             destination_city = form.cleaned_data['destination_city']
             departure_state = form.cleaned_data['departure_state']
             departure_city = form.cleaned_data['departure_city']
-            price = form.cleaned_data['price']
             bags = form.cleaned_data['bags']
             date = form.cleaned_data['date']
             time = form.cleaned_data['time']

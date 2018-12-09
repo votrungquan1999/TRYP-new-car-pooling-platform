@@ -39,9 +39,20 @@
 /*Testing Navigation bar ends here*/
 
 .main {
-    width:1300px;
+    width:1500px;
     margin-left: 450px;    
 }
+    
+    .title {
+        width: 100%;
+        position: absolute;
+        vertical-align: middle;
+        margin-left: 300px;
+        font-size: 2.5rem;
+        font-weight: 50;
+        font-family: "Berlin Sans FB", "Palatino Linotype", monospace;
+    }
+
 
 .trip-info {
         width: 600px;
@@ -141,6 +152,55 @@ input[type=text]:focus, input[type=password]:focus {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
     
+.button3 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button3 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: slateblue;
+    display: inline-block;
+    margin-left: 10px;
+    height: 50px;
+    width: 130px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    font-family: Courier, monospace;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+    
+.button3 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button3:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button3:hover span {
+    padding-right: 25px;
+}
+
+.button3:hover span:after {
+    opacity: 1;
+    right: 0;
+}
 </style>
     
 </head>
@@ -171,37 +231,34 @@ input[type=text]:focus, input[type=password]:focus {
     <form class="site-form" method="post">
     {% csrf_token %}
     <div class="main">
+    <div class="title"><label>Title: </label> {{form.title}}</div>
     <div class="trip-info">
-    <br>
-    <label>Title: </label> {{form.title}}
     <br>
     <br>
     <label>Departure State: </label> {{form.departure_state}}
     <br>
     <br>
-    <label>Destination State: </label> {{form.destination_state}}
-    <br>
-    <br>
     <label>Departure City: </label> {{form.departure_city}}
-    <br>
-    <br>
-    <label>Destination City: </label> {{form.destination_city}}
-    </div>
-    <div class ="user-info">
-    <br>
-    <label>Seats: </label> {{form.seats}}
-    <br>
-    <br>
-    <label>Price: </label> {{form.price}}
-    <br>
-    <br>
-    <label>Bags: </label> {{form.bags}}
     <br>
     <br>
     <label>Date: </label> {{form.date}}
     <br>
     <br>
+    <label>Bags: </label> {{form.bags}}
+    </div>
+    <div class ="user-info">
+    <br>
+    <br>
+    <label>Destination State: </label> {{form.destination_state}}
+    <br>
+    <br>
+    <label>Destination City: </label> {{form.destination_city}}
+    <br>
+    <br>
     <label>Time: </label> <input title="form.time" type="time" name="time">
+    <br>
+    <br>
+    <label>Seats: </label> {{form.seats}}
     <br>
     <br>
     <div class="clear"></div>
