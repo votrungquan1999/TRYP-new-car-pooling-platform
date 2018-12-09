@@ -74,7 +74,7 @@ class createCarPoolForm(forms.Form):
     departure_city = forms.CharField(label="City of departure")
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
     destination_city = forms.CharField(label="City of destination")
-    price = forms.FloatField(label="Price")
+    #price = forms.FloatField(label="Price")
     bags = forms.IntegerField(label="Number of bags carry")
     date = forms.DateField()
     time = forms.TimeField()
@@ -85,6 +85,9 @@ class findPassengerForm(forms.Form):
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
     destination_city = forms.CharField(label="City of destination")
     date = forms.DateField()
+
+class getPriceForm(forms.Form):
+    price = forms.FloatField(label="Price")
 
 class addDriverForm(forms.Form):
     confirm = forms.CharField(label="Please type CONFIRM here", max_length=10)

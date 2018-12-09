@@ -54,33 +54,30 @@ def get_time_distance(source, dest):
 
     return time, distance
 
-
-def test_uber_api(request):
-    # response = client.get_products(37.77, -122.41)
-    # products = response.json.get('products')
+def get_uber_price(source, destination):
     session = Session(server_token='V_89PqdPNV7zZO8_5G4C1tb3_-iVc3UXwd9h6JyU')
     client = UberRidesClient(session)
-    begin_latitude, begin_longitude = get_coordinate('plattsburgh, NY')
+    begin_latitude, begin_longitude = get_coordinate(source)
 
-    end_latitude, end_longitude = get_coordinate('new york city, NY')
+    end_latitude, end_longitude = get_coordinate(destination)
 
     try:
         response = client.get_price_estimates(
-            start_latitude = begin_latitude,
-            start_longitude = begin_longitude,
-            end_latitude = end_latitude,
-            end_longitude = end_longitude,
+            start_latitude=begin_latitude,
+            start_longitude=begin_longitude,
+            end_latitude=end_latitude,
+            end_longitude=end_longitude,
             seat_count=2
         )
 
         estimate = response.json.get('prices')[0]['estimate']
-        return HttpResponse(estimate)
+        return estimate
     except:
-        time, distance = get_time_distance('plattsburgh, NY', 'new york city, NY')
+        time, distance = get_time_distance(source, destination)
         time = time / 60
 
-
-        response = client.get_products(37.77, -122.41)
+        #response = client.get_products(37.77, -122.41)
+        response = client.get_products(get_coordinate(source))
         products = response.json.get('products')[6]
 
         price_detail = products['price_details']
@@ -97,9 +94,16 @@ def test_uber_api(request):
         service_fee = price_detail['service_fees'][0]
         booking_fee = service_fee['fee']
 
-        uber_fee = int(cost_per_minute * time + cost_per_distance*distance + booking_fee)
+        uber_fee = int(cost_per_minute * time + cost_per_distance * distance + booking_fee)
+        return uber_fee
 
-        return HttpResponse('{0}'.format(uber_fee))
+
+def test_uber_api(request):
+    # response = client.get_products(37.77, -122.41)
+    # products = response.json.get('products')
+
+
+    return HttpResponse('{0}'.format(get_uber_price()))
 
     # return HttpResponse(str(begin_latitude) + ' ' + str(begin_longitude))
 

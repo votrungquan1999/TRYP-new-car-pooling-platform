@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404, Http404
 from django.contrib.auth.models import User
-from .forms import createCarPoolForm, carForm, findPassengerForm, addDriverForm
+from .forms import createCarPoolForm, carForm, findPassengerForm, addDriverForm, getPriceForm
 from .models import CarPoolPost, Car
 from pssngr_interface.models import NeedRidePost
+import test_api.views as apis
 
 # Create your views here.
 
@@ -20,6 +21,24 @@ def driver_view(request):
     except:
         return redirect("Home:Home")
 
+def compare_price(request, post_id):
+    try:
+        user_id = request.session['user_id']
+    except:
+        return redirect("Home:Home")
+    if user_id is not None:
+        post = get_object_or_404(CarPoolPost, id = post_id)
+        uber_price = apis.get_uber_price()
+        form = getPriceForm(request.POST)
+        if form.is_valid():
+            price = form.cleaned_data['price']
+            post.price = price
+            post.save()
+        else:
+            return render(request, 'driver_interface/compare_price.html', {"form": form,
+                                                                           'uber_price': uber_price})
+
+
 def post_car_pool(request):
     try:
         user_id = request.session['user_id']
@@ -32,7 +51,7 @@ def post_car_pool(request):
                 destination_city = form.cleaned_data['destination_city']
                 departure_state = form.cleaned_data['departure_state']
                 departure_city = form.cleaned_data['departure_city']
-                price = form.cleaned_data['price']
+                #price = form.cleaned_data['price']
                 bags = form.cleaned_data['bags']
                 date = form.cleaned_data['date']
                 time = form.cleaned_data['time']
@@ -40,7 +59,7 @@ def post_car_pool(request):
                 user = User.objects.get(id=user_id)
                 my_user = user.myuser
                 car_pool_post = CarPoolPost(seats=seats, destination_state=destination_state, destination_city=destination_city,
-                                            price=price, bags=bags, date=date, time=time, my_user=my_user, departure_city = departure_city,
+                                            bags=bags, date=date, time=time, my_user=my_user, departure_city = departure_city,
                                             departure_state = departure_state, title = title)
                 car_pool_post.save()
                 return redirect('driver_interface:driver_view')

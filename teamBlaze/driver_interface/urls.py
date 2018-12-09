@@ -9,5 +9,6 @@ urlpatterns = [
     path('check_car_pool/<int:post_id>/', views.detail_car_pool, name = 'detail_car_pool'),
     path('check_car_pool/', views.check_car_pool, name = 'check_car_pool'),
     path('find_passenger/', views.find_passenger, name = 'find_passenger'),
-    path('add_driver/<int:post_id>/', views.add_driver, name = 'add_driver')
+    path('add_driver/<int:post_id>/', views.add_driver, name = 'add_driver'),
+    path('compare_price/<int:post_id>/', )
 ]
