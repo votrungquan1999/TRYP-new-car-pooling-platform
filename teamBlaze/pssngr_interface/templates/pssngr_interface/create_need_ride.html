@@ -1,99 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>You are creating a car pool post</h1>
-    <form method = "post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="OK">
-    </form>
-</body>
-</html>
-
-<!--
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
     <meta charset="utf-8">
     <title>TRYP</title>
     <link rel="stylesheet" href="/static/bootstrap.min.css">
     <link rel="stylesheet" href="/static/bootstrap-theme.css">
     <link rel="stylesheet" href="/static/style.css">
-
 <style>
+    
+/*Testing Navigation bar starts here*/
 
-.middle h {
-    position: absolute;
-    left: 550px;
-    font-family: 'OogieBoogie', "Palatino Linotype", monospace;
-    font-size: 6rem;
-    font-weight: 300;
-    color: hotpink;
-    text-shadow: 1px 1px 3px white;
+.topnav {
+  overflow: auto;
+  background-color: (153, 217, 234);
+}
+
+.topnav a {
+  position: relative;
+  float: left;
+  padding: 14px 16px;
+    
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Berlin Sans FB", monospace;
+  font-size: 2rem;
+  font-weight: 100;
+  border-radius: 20px;
+}
+
+.topnav a:hover {
+  background-color: slateblue;
+  color: white;
+}
+
+
+/*Testing Navigation bar ends here*/
+
+.main {
+    width:1300px;
+    margin-left: 450px;    
+}
+
+.trip-info {
+        width: 600px;
+        float: left;
+        font-size: 2.5rem;
+        font-weight: 50;
+        font-family: "Berlin Sans FB", "Palatino Linotype", monospace;
+        }
+
+.user-info {
+    width: 700px;
+    float: left;
+    font-size: 2.5rem;
+    font-weight: 50;
+    font-family: "Berlin Sans FB", "Palatino Linotype", monospace;
     }
 
-    .button {
-        display: inline-block;
-        margin-left: 65px;
-        margin-right: 65px;
+.clear {
+    clear: both;
     }
-    form1 {
-        display: inline-block;
-    }
+
+    
+label {
+    display: inline-block;
+    float: left;
+    text-align: right;
+}
+
+input {
+    border-radius: 15px;
+    display: inline-block;
+    float: left;
+    width: auto;
+}
+
+        
+input[type=text]:focus, input[type=password]:focus {
+    background-color: aquamarine;
+    outline: none;
+}
+
+.button1 {
+    /*Button*/
+    border-radius: 25px;
+    background-color: #FE5531;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 200px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+    font-weight: bold;
+    color: white;
+    
+    /*Text*/
+    font-family: "Courier", monospace;
+    font-size: 2.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    font-family: "Courier", monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.button2:hover {;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+    
 </style>
-
+    
 </head>
 <body>
+    
 
-
-<!--Template starts--
-
+<!--Template starts-->
+    
 <div class="container">
-
-    <!--App logo--
+    
+    <div class="topnav">
+        <a href="{% url 'Home:Home' %}">Home</a>
+        <a href="{% url 'About:about_info' %}">About</a>
+        <a href="">Feedback</a>
+        <a href="/accounts/logout/">Log out</a>
+    </div>
+    
+    <!--App logo-->
     <div class ="logo">
         <img src="/static/transBG.png">
         <h1>T.R.Y.P</h1>
         <p>Are you tryppin'? </p>
     </div>
-
-<!--Template ends--
-
-<!--------------------------------YOUR CODE STARTS HERE--------------------------------
-
-    <form class="site-form" action="/.../" method="post">
-      {% csrf_token %}
-    <label>Title:</label> {{form.title}}
-    <label>Seats:</label> {{form.seats}}
-    <label>Departure State:</label> {{form.departure_state}}
-    <label>Destination State:</label> {{form.destination_state}}
-    <label>Departure City:</label> {{form.departure_city}}
-    <label>Destination City:</label> {{form.destination_city}}
-    <label>Price:</label> {{form.price}}
-    <label>Bags:</label> {{form.bags}}
-    <label>Date:</label> {{form.date}}
-    <label>Time:</label> {{form.time}}
-    <br>
-    <br>
-
-<!--------------------------------YOUR CODE ENDS HERE--------------------------------
-
-<!--Template starts-->
-
-    <!--About section--
-    <div class="about">
-    <h1>&copy; Team Blaze&trade; </h1>
-        <form action ="{% url 'About:about_info' %}">
-        <button class = "buttonn" >About us</button>
-        </form>
-    </div>
-
+    
 <!--Template ends-->
 
+<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
+    <form class="site-form" method="post">
+    {% csrf_token %}
+    <div class="main">
+    <div class="trip-info">
+    <br>
+    <label>Title: </label> {{form.title}}
+    <br>
+    <br>
+    <label>Departure State: </label> {{form.departure_state}}
+    <br>
+    <br>
+    <label>Destination State: </label> {{form.destination_state}}
+    <br>
+    <br>
+    <label>Departure City: </label> {{form.departure_city}}
+    <br>
+    <br>
+    <label>Destination City: </label> {{form.destination_city}}
+    </div>
+    <div class ="user-info">
+    <br>
+    <label>Number of Passengers: </label> {{form.seats}}
+    <br>
+    <br>
+    <label>Offered price per person: </label> {{form.price}}
+    <br>
+    <br>
+    <label>Bags: </label> {{form.bags}}
+    <br>
+    <br>
+    <label>Date: </label> {{form.date}}
+    <br>
+    <br>
+    <label>Time: </label> <input title="form.time" type="time" name="time">
+    <br>
+    <br>
+    <div class="clear"></div>
+    </div>
+    </div>
+    <div class = "someButton">
+    <button class = "button1" type="submit" >Submit</button>
+    </div>
+    <br>
+    </form>
+    <div class = "someButton">
+    <form action="{% url 'pssngr_interface:passenger_view' %}">
+    <button class = "button2">Go back</button>
+    </form>
+    </div>
+<!--------------------------------YOUR CODE ENDS HERE-------------------------------->
 
+<!--Template starts-->
+    
+    <!--About section-->
+    <div class="about">
+    <h1>&copy; Team Blaze&trade; </h1>
+    </div>
+    
+<!--Template ends-->
+
+</div>
+</body>
+</html>

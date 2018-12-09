@@ -70,7 +70,7 @@ class createNeedRideForm(forms.Form):
     destination_city = forms.CharField(label="City of destination")
     price = forms.FloatField(label="Price offer per person")
     bags = forms.IntegerField(label="Number of bags carry")
-    date = forms.DateField()
+    date = forms.DateField(widget=forms.SelectDateWidget())
     time = forms.TimeField()
 
 class findDriverForm(forms.Form):
@@ -79,7 +79,7 @@ class findDriverForm(forms.Form):
     departure_city = forms.CharField(label="City of departure")
     destination_state = forms.CharField(label="State of destination", widget=forms.Select(choices=STATE_CHOICE))
     destination_city = forms.CharField(label="City of destination")
-    date = forms.DateField()
+    date = forms.DateField(widget=forms.SelectDateWidget())
 
 class addPassengerForm(forms.Form):
     confirm = forms.CharField(label="Please type CONFIRM here", max_length=10)

@@ -9,6 +9,35 @@
     <link rel="stylesheet" href="/static/style.css">
 
 <style>
+    
+/*Testing Navigation bar starts here*/
+
+.topnav {
+  overflow: auto;
+  background-color: (153, 217, 234);
+}
+
+.topnav a {
+  position: relative;
+  float: left;
+  padding: 14px 16px;
+    
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Berlin Sans FB", monospace;
+  font-size: 2rem;
+  font-weight: 100;
+  border-radius: 20px;
+}
+
+.topnav a:hover {
+  background-color: slateblue;
+  color: white;
+}
+
+
+/*Testing Navigation bar ends here*/
 
 .middle h {
     position: absolute;
@@ -28,6 +57,64 @@
     form1 {
         display: inline-block;
     }
+
+.button1 {
+    /*Button*/
+    border-radius: 25px;
+    background-color: red;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75px;
+    width: 225px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    text-align:center;
+    text-decoration: none;
+    color: white;
+    margin: 0 auto;
+    font-family: 'Palatino', 'Palatino Linotype', serif;
+    font-size: 30px;
+}
+
+.button1:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.button2 {
+    /*Button*/
+    border-radius: 20px;
+    background-color: #31CFFE;
+    padding: 15px 32px;
+    vertical-align: middle;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 150px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.24),0 12px 30px 0 rgba(0,0,0,0.19);
+
+    /*Text*/
+    font-family: "Courier", monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.button2:hover {;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+  
 </style>
 
 </head>
@@ -37,6 +124,13 @@
 <!--Template starts-->
 
 <div class="container">
+    
+    <div class="topnav">
+        <a href="{% url 'Home:Home' %}">Home</a>
+        <a href="{% url 'About:about_info' %}">About</a>
+        <a href="">Feedback</a>
+        <a href="/accounts/logout/">Log out</a>
+    </div>
 
     <!--App logo-->
     <div class ="logo">
@@ -52,24 +146,30 @@
     <div class ="middle">
     <br>
     <br>
-    <br>
     <h>What would you like to do?</h>
     <br>
     <br>
     <br>
     <br>
-    <!--<a href ="{% url 'driver_interface:create_car_pool' %}">
-        <button class="button"><span>Post Carpool</span></button>
-    </a>-->
-    <form style="display: inline;" action="/passenger/create_need_ride/">
-        <button class="button"><span>Post Need a Drive</span></button>
+    <form style="display: inline;" action="{% url 'pssngr_interface:create_need_ride' %}">
+        <button class="button"><span>Ask for ride</span></button>
     </form>
-    <form style="display: inline;" action ="/passenger/check_need_ride/">
-        <button class="button"><span>Check Need a Drive</span></button>
+    <form style="display: inline;" action ="{% url 'pssngr_interface:check_need_ride' %}">
+        <button class="button"><span>Check trips</span></button>
     </form>
-    <form style="display: inline;" action ="/passenger/find_driver"><button class="button"><span>Find Driver</span></button></form>
+    <form style="display: inline;" action ="{% url 'pssngr_interface:find_driver' %}">
+        <button class="button"><span>Find Driver</span></button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class = "someButton">
+    <form action="{% url 'roleChoice:roleChoice' %}">
+    <button class = "button2">Go back</button>
+    </form>
     </div>
-
+    </div>
 <!--------------------------------YOUR CODE ENDS HERE-------------------------------->
 
 <!--Template starts-->
@@ -77,12 +177,6 @@
     <!--About section-->
     <div class="about">
     <h1>&copy; Team Blaze&trade; </h1>
-        <form action ="{% url 'About:about_info' %}">
-        <button class = "button" >About us</button>
-        </form>
-        <form action="/accounts/logout/">
-        <button class="button">Logout</button>
-        </form>
     </div>
 
 <!--Template ends-->
@@ -90,6 +184,5 @@
 
 
 </div>
-
 </body>
 </html>
