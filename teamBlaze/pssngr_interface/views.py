@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from .forms import createNeedRideForm, findDriverForm, addPassengerForm
 from .models import NeedRidePost
 from driver_interface.models import CarPoolPost
+from accounts.models import MyUser
 
 # Create your views here.
 def pssngr_view(request):
@@ -40,9 +41,10 @@ def post_need_ride(request):
             title = form.cleaned_data['title']
             user = User.objects.get(id=user_id)
             my_user = user.myuser
+            driver = User.objects.get(username = 'test123')
             need_ride_post = NeedRidePost(seats=seats, destination_state=destination_state, destination_city=destination_city,
                                         price=price, bags=bags, date=date, time=time, my_user=my_user, departure_city = departure_city,
-                                        departure_state = departure_state, title = title)
+                                        departure_state = departure_state, title = title, driver = driver)
             need_ride_post.save()
             return redirect('pssngr_interface:passenger_view')
         return render(request, 'pssngr_interface/create_need_ride.html', {'form':form})
@@ -64,7 +66,7 @@ def check_need_ride(request):
         for post in need_ride_posts:
             if post.my_user is my_user:
                 posts.append(post)
-        return render(request, 'pssngr_interface/check_need_ride.html', {'car_pool_posts':posts})
+        return render(request, 'pssngr_interface/check_need_ride.html', {'posts':posts})
     else:
         return redirect('Home:Home')
 
