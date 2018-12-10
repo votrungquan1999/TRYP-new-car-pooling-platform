@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/static/style.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <style>
 
@@ -25,6 +25,15 @@
     text-shadow: 1px 1px 0px rgba(255, 255, 255, .2);
 }
 
+.middle p1  
+    {
+        float: left;
+        margin-left: 800px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 2rem;
+        color: red;
+    }
 
 .button1 {
     /*Button*/
@@ -122,6 +131,8 @@ input[type=text]:focus, input[type=password]:focus {
 <!--Template ends-->
 
 <!--------------------------------YOUR CODE STARTS HERE-------------------------------->
+
+    
      <!--Account options-->
     <div class ="middle">
     <br>
@@ -132,13 +143,15 @@ input[type=text]:focus, input[type=password]:focus {
     <label>Username:</label> {{form.username}}
     <br>
     <br>
-    <label>Password:</label> {{form.password1}}
+    <label>Password:</label> <input type="password" id="password1" required pattern=".{8,}" title="Must contain at least 8 characters" oninvalid="Please double check the requirements">
+    <br>
+    <p1>Password must contain at least 8 characters <br> and must not be too common.</p1>
+    <br>
+    <label>Password confirmation:</label> <input type="password" id="password2" required pattern="1=password1" title="Must match password" oninvalid="Please make sure both password fields match">
     <br>
     <br>
-    <label>Password confirmation:</label> {{form.password2}}
     <br>
-    <br>
-    <button class = "button1" type="submit" >Sign up</button>
+    <button class = "button1" type="submit" onclick="validate()">Sign up</button>
     </form>
     <br>
     <form action="{%url 'Home:Home' %}">
