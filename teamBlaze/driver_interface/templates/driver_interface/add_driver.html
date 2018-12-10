@@ -7,7 +7,6 @@
 <body>
     <h1>Post's name: {{post.title}}</h1>
     <ul>
-<<<<<<< HEAD
         <li>Date : {{post.date}}</li>
         <li>Time : {{post.time}}</li>
         <li>Departure State: {{post.departure_state}}</li>
@@ -63,7 +62,7 @@
 
 <!--Template ends-->
 
-<!--------------------------------YOUR CODE STARTS HERE-------------------------------->
+<!--------------------------------YOURs CODE STARTS HERE-------------------------------->
 
 
 
@@ -80,24 +79,4 @@
     </div>
 
 <!--Template ends-->
-=======
-      <li>Date : {{post.date}}</li>
-      <li>Time : {{post.time}}</li>
-      <li>Departure State: {{post.departure_state}}</li>
-      <li>Destination State: {{post.destination_state}}</li>
-      <li>Destination City : {{post.destination_city}}</li>
-      <li>Avaliable Bag Space: {{post.bags}}</li>
-      <li>Seats Avaliable :{{post.seats}}</li>
-      <li>Price per Seat : {{post.price}}</li>
-      <li>Seats Avaliable :{{post.seats}}</li>
-    </ul>
 
-    <form method = "post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="CONFIRM">
-    </form>
-
-</body>
-</html>
->>>>>>> 3021a4c382a24e281ddf0acdf9a0d24073cfae80
