@@ -286,7 +286,7 @@ input[type=text]:focus, input[type=password]:focus {
                 </tr>
             </thead>
             <tbody>
-                {% for post in car_pool_posts %}
+                {% for post in posts %}
                 <tr>
                     <td style="width:80px"></td>
                     <td><a href="{% url 'pssngr_interface:add_passenger' post.id %}">{{post.title}}</a></td>
