@@ -10,6 +10,9 @@ def Home(request):
     except:
         return render(request, 'Home/homepage.html')
 
+def success(request):
+    return render(request, 'Home/success.html')
+
 '''def Feedback_view(request):
     form = Feedback_Form(request.POST or None)
     if form.is_valid():
