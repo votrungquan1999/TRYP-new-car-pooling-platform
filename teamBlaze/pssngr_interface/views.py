@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, Http404
+from django.shortcuts import render, redirect, get_object_or_404, Http404, HttpResponse
 from django.contrib.auth.models import User
 from .forms import createNeedRideForm, findDriverForm, addPassengerForm
 from .models import NeedRidePost
@@ -57,6 +57,7 @@ def check_need_ride(request):
         user_id = request.session['user_id']
     except:
         return redirect('Home:Home')
+
     if user_id is not None:
         user = User.objects.get(id= user_id)
         my_user = user.myuser
@@ -64,7 +65,7 @@ def check_need_ride(request):
         need_ride_posts = NeedRidePost.objects.all()
         posts = []
         for post in need_ride_posts:
-            if post.my_user is my_user:
+            if post.my_user.pk == my_user.pk:
                 posts.append(post)
         return render(request, 'pssngr_interface/check_need_ride.html', {'posts':posts})
     else:
