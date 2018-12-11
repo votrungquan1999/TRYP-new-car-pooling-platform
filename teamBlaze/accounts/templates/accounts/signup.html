@@ -132,7 +132,6 @@ input[type=text]:focus, input[type=password]:focus {
 
 <!--------------------------------YOUR CODE STARTS HERE-------------------------------->
 
-    
      <!--Account options-->
     <div class ="middle">
     <br>
@@ -143,15 +142,15 @@ input[type=text]:focus, input[type=password]:focus {
     <label>Username:</label> {{form.username}}
     <br>
     <br>
-    <label>Password:</label> <input type="password" id="password1" required pattern=".{8,}" title="Must contain at least 8 characters" oninvalid="Please double check the requirements">
+    <label>Password:</label> {{form.password1}}
     <br>
     <p1>Password must contain at least 8 characters <br> and must not be too common.</p1>
     <br>
-    <label>Password confirmation:</label> <input type="password" id="password2" required pattern="1=password1" title="Must match password" oninvalid="Please make sure both password fields match">
+    <label>Password confirmation:</label> {{form.password2}}
     <br>
     <br>
     <br>
-    <button class = "button1" type="submit" onclick="validate()">Sign up</button>
+    <button class = "button1" type="submit">Sign up</button>
     </form>
     <br>
     <form action="{%url 'Home:Home' %}">
